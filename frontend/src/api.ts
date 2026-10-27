@@ -9,8 +9,8 @@ import {
 
 // Use environment variable if provided; otherwise connect to localhost when running locally, or fallback smoothly
 const API_BASE = import.meta.env.VITE_API_BASE_URL || (
-  typeof window !== 'undefined' && window.location.hostname === 'localhost'
-    ? 'http://localhost:8000/api'
+  typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://127.0.0.1:8000/api'
     : '/api'
 );
 
@@ -153,54 +153,37 @@ const MOCK_TOPICS: TopicItem[] = [
 
 const MOCK_VIDEOS: VideoItem[] = [
   {
-    id: 'job_channel_intro_shorts',
-    title: 'MysteryVerse Malayalam — 3D Channel Introduction (Shorts)',
-    script_id: 'scr_channel_intro_official',
-    topic_id: 'top_intro_official',
-    topic_title: 'MysteryVerse Malayalam — 3D Channel Introduction (Shorts)',
-    mal_title: 'അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | Official 3D Intro',
+    id: 'mysteryverse_intro_short',
+    title: 'MysteryVerse Malayalam — Introduction Short (9:16 Vertical)',
+    script_id: 'scr_mysteryverse_intro_short',
+    topic_id: 'top_mysteryverse_intro',
+    topic_title: 'MysteryVerse Malayalam Channel Introduction Short',
+    mal_title: 'അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | Official Short',
     video_type: 'short',
     resolution: '1080x1920',
-    duration_sec: 33.5,
-    render_engine: 'procedural_3d_ffmpeg',
+    duration_sec: 44.57,
+    render_engine: 'cinematic_production_director',
     status: 'ready_for_upload',
     quality_passed: true,
-    thumbnail_url: '/static/thumbnails/channel_intro_thumb_169.jpg',
-    video_url: '/static/videos/channel_intro_shorts_916_final.mp4',
+    thumbnail_url: '/static/thumbnails/mysteryverse_intro_short_thumb.jpg',
+    video_url: '/static/videos/mysteryverse_intro_short.mp4',
     created_at: new Date().toISOString()
   },
   {
-    id: 'job_channel_intro_wide',
-    title: 'MysteryVerse Malayalam — 3D Channel Introduction (Widescreen)',
-    script_id: 'scr_channel_intro_official',
-    topic_id: 'top_intro_official',
-    topic_title: 'MysteryVerse Malayalam — 3D Channel Introduction (Widescreen)',
-    mal_title: 'അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | 16:9 Cinematic Intro',
+    id: 'mysteryverse_intro_long',
+    title: 'MysteryVerse Malayalam — Cinematic Channel Introduction (16:9 Full HD)',
+    script_id: 'scr_mysteryverse_intro_long',
+    topic_id: 'top_mysteryverse_intro',
+    topic_title: 'MysteryVerse Malayalam Full Channel Introduction',
+    mal_title: 'അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | 16:9 Cinematic Video',
     video_type: 'long',
     resolution: '1920x1080',
-    duration_sec: 33.5,
-    render_engine: 'procedural_3d_ffmpeg',
+    duration_sec: 160.68,
+    render_engine: 'cinematic_production_director',
     status: 'ready_for_upload',
     quality_passed: true,
-    thumbnail_url: '/static/thumbnails/channel_intro_thumb_169.jpg',
-    video_url: '/static/videos/channel_intro_widescreen_169_final.mp4',
-    created_at: new Date().toISOString()
-  },
-  {
-    id: 'demo_jobelessboy_solarsystem',
-    title: 'Solar System Secrets & Planetary Mechanics',
-    script_id: 'scr_solarsystem_secrets',
-    topic_id: 'top_solarsystem_secrets',
-    topic_title: 'Solar System Secrets & Planetary Mechanics',
-    mal_title: 'സൗരയൂഥത്തിന്റെ അത്ഭുത രഹസ്യങ്ങൾ!',
-    video_type: 'short',
-    resolution: '1080x1920',
-    duration_sec: 13.1,
-    render_engine: 'procedural_3d_ffmpeg',
-    status: 'ready_for_upload',
-    quality_passed: true,
-    thumbnail_url: '/static/thumbnails/demo_jobelessboy_solarsystem_thumb.jpg',
-    video_url: '/static/videos/demo_jobelessboy_solarsystem_final.mp4',
+    thumbnail_url: '/static/thumbnails/mysteryverse_intro_long_thumb.jpg',
+    video_url: '/static/videos/mysteryverse_intro_long.mp4',
     created_at: new Date().toISOString()
   }
 ];

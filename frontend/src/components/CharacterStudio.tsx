@@ -15,10 +15,13 @@ export const CharacterStudio: React.FC = () => {
   const [selectedExpression, setSelectedExpression] = useState<string>('explanation');
 
   const expressions = [
+    { id: 'explanation', name: 'Explanation (വിവരണം)', desc: 'Direct center gaze, friendly articulate presentation' },
+    { id: 'waving', name: 'Friendly Wave (കൈവീശൽ)', desc: 'Warm animated opening wave welcoming viewers to the video' },
+    { id: 'talking_wide', name: 'Active Speaking (സംസാരം)', desc: 'Dynamic mouth movement and expressive articulation of facts' },
     { id: 'curiosity', name: 'Curiosity (കൗതുകം)', desc: 'One eyebrow raised, head tilted observing a cosmic anomaly' },
     { id: 'surprise', name: 'Surprise (വിസ്മയം)', desc: 'Wide eyes, gasping at an unexpected scientific discovery' },
-    { id: 'explanation', name: 'Explanation (വിവരണം)', desc: 'Direct center gaze, friendly articulate presentation' },
     { id: 'excitement', name: 'Excitement (ആവേശം)', desc: 'Enthusiastic broad smile presenting breakthroughs' },
+    { id: 'welcome', name: 'Call to Action (സബ്സ്ക്രൈബ്)', desc: 'Enthusiastic pointing to subscribe and join the mystery journey' },
     { id: 'caution', name: 'Caution (ജാഗ്രത)', desc: 'Serious furrowed brow warning against pseudoscience' },
     { id: 'humour', name: 'Humour (ഫലിതം)', desc: 'Wry asymmetrical smirk with playful amused nod' }
   ];

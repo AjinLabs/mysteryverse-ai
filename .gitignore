@@ -33,6 +33,9 @@ backend/static/audio/
 backend/static/clips/
 backend/static/subtitles/*.ass
 backend/static/subtitles/*.srt
+backend/static/temp_*.png
+backend/static/test_*.png
+output/
 
 # Environment & secrets
 .env

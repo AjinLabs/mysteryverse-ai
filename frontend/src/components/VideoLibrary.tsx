@@ -203,14 +203,14 @@ export const VideoLibrary: React.FC<VideoLibraryProps> = ({ videos, onRefresh })
                   controls
                   autoPlay
                   className="w-full h-full object-contain"
-                  src={`http://localhost:8000${selectedVideo.video_url}`}
+                  src={selectedVideo.video_url}
                 >
                   {selectedVideo.subtitles_url && (
                     <track
                       kind="subtitles"
-                      src={`http://localhost:8000${selectedVideo.subtitles_url}`}
-                      srcLang="ml"
-                      label="Malayalam"
+                      src={selectedVideo.subtitles_url}
+                      srcLang="en"
+                      label="English"
                       default
                     />
                   )}

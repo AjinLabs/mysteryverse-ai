@@ -1,0 +1,156 @@
+"""
+Execute full pipeline rendering for the Cinematic Character Video Engine test video
+featuring official host 'jobelessboy'.
+Generates:
+- 16:9 Widescreen Full HD MP4 (1920x1080)
+- 9:16 Vertical Shorts Full HD MP4 (1080x1920)
+- High-res thumbnails with host overlay
+- Syncs to frontend/public
+- Registers into SQLite database
+"""
+
+import os
+import sys
+import time
+import asyncio
+import subprocess
+import sqlite3
+import shutil
+from pathlib import Path
+
+# Ensure UTF-8 output on Windows consoles
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
+# Add backend to path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "backend"))
+
+from app.config import (
+    STATIC_DIR,
+    VIDEOS_DIR,
+    AUDIO_DIR,
+    THUMBNAILS_DIR,
+    DB_PATH,
+    get_ffmpeg_path
+)
+from app.audio.tts_service import MalayalamTTSService
+from app.animation.cinematic_character_engine import CinematicCharacterEngine
+from app.thumbnail.thumbnail_engine import ThumbnailEngine
+
+async def run_pipeline():
+    start_time = time.time()
+    print("=" * 70)
+    print("MYSTERYVERSE AI - CINEMATIC CHARACTER VIDEO ENGINE")
+    print("Target Character: jobelessboy (ജോബ്‌ലെസ് ബോയ്)")
+    print("=" * 70)
+
+    # 1. Synthesize Malayalam Voiceover Audio
+    print("\n[Step 1/5] Synthesizing authentic Malayalam narration...")
+    audio_path = str(AUDIO_DIR / "cinematic_jobelessboy_audio.mp3")
+    script_mal = (
+        "നമസ്കാരം കൂട്ടുകാരേ, ഞാൻ നിങ്ങളുടെ സ്വന്തം ജോബ്‌ലെസ് ബോയ്! "
+        "നമ്മുടെ സൗരയൂഥത്തിലെ ഏറ്റവും അത്ഭുതകരമായ രഹസ്യങ്ങൾ നിങ്ങൾക്കറിയാമോ? "
+        "നോക്കൂ, ശനിയുടെ ഈ മനോഹരമായ വളയങ്ങൾ ലക്ഷക്കണക്കിന് മഞ്ഞുപാളികളും പാറകളും കൊണ്ടാണ് നിർമ്മിച്ചിരിക്കുന്നത്! "
+        "പ്രപഞ്ചത്തിലെ ഇത്തരം അത്ഭുത സത്യങ്ങൾ ഇനിയും അറിയാൻ മിസ്റ്ററിവേഴ്സ് മലയാളം ഇപ്പോൾത്തന്നെ സബ്സ്ക്രൈബ് ചെയ്യൂ!"
+    )
+    tts = MalayalamTTSService()
+    res = await tts.synthesize(script_mal, audio_path, rate="+8%", pitch="+10Hz")
+    print(f"Generated speech audio: {audio_path} ({res['file_size']} bytes)")
+
+    # Measure exact audio duration
+    ffmpeg_bin = get_ffmpeg_path()
+    cmd = [ffmpeg_bin, "-i", audio_path, "-f", "null", "-"]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    duration = 20.5
+    for line in proc.stderr.splitlines():
+        if "Duration:" in line:
+            parts = line.split("Duration:")[1].split(",")[0].strip().split(":")
+            duration = float(parts[0]) * 3600 + float(parts[1]) * 60 + float(parts[2])
+            break
+    print(f"Verified Audio Duration: {duration:.2f} seconds")
+
+    # 2. Render 16:9 Widescreen Cinematic Video (1920x1080)
+    print("\n[Step 2/5] Rendering 16:9 Widescreen Broadcast Video (1920x1080)...")
+    out_169 = str(VIDEOS_DIR / "cinematic_jobelessboy_solarsystem_169.mp4")
+    engine_169 = CinematicCharacterEngine(width=1920, height=1080, fps=24)
+    engine_169.generate_cinematic_video(out_169, audio_path, duration)
+    print(f"Successfully rendered 16:9 Video: {out_169} ({os.path.getsize(out_169)} bytes)")
+
+    # 3. Render 9:16 Vertical Shorts Video (1080x1920)
+    print("\n[Step 3/5] Rendering 9:16 YouTube Shorts Video (1080x1920)...")
+    out_916 = str(VIDEOS_DIR / "cinematic_jobelessboy_solarsystem_916.mp4")
+    engine_916 = CinematicCharacterEngine(width=1080, height=1920, fps=24)
+    engine_916.generate_cinematic_video(out_916, audio_path, duration)
+    print(f"Successfully rendered 9:16 Video: {out_916} ({os.path.getsize(out_916)} bytes)")
+
+    # 4. Generate High-Impact 3D Thumbnails with jobelessboy host
+    print("\n[Step 4/5] Generating thumbnails with jobelessboy host...")
+    thumb_engine = ThumbnailEngine()
+    thumb_169 = str(THUMBNAILS_DIR / "cinematic_jobelessboy_solarsystem_thumb_169.jpg")
+    thumb_engine.generate_thumbnail(
+        output_path=thumb_169,
+        title_mal="സൗരയൂഥ രഹസ്യങ്ങൾ!",
+        category="Space",
+        expression="excitement",
+        badge_text="സൗരയൂഥ രഹസ്യം!"
+    )
+    print(f"Generated 16:9 Thumbnail: {thumb_169}")
+
+    # 5. Sync to Frontend Public Directory and Database
+    print("\n[Step 5/5] Syncing to frontend and registering into database...")
+    fe_videos = Path(r"c:\m\frontend\public\static\videos")
+    fe_thumbs = Path(r"c:\m\frontend\public\static\thumbnails")
+    fe_videos.mkdir(parents=True, exist_ok=True)
+    fe_thumbs.mkdir(parents=True, exist_ok=True)
+
+    shutil.copy2(out_169, fe_videos / "cinematic_jobelessboy_solarsystem_169.mp4")
+    shutil.copy2(out_916, fe_videos / "cinematic_jobelessboy_solarsystem_916.mp4")
+    shutil.copy2(thumb_169, fe_thumbs / "cinematic_jobelessboy_solarsystem_thumb_169.jpg")
+
+    # Register into SQLite Database
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT OR REPLACE INTO published_videos 
+        (id, topic_title, format_type, video_path, thumbnail_path, title_malayalam, title_english, description_malayalam, duration_sec, published_to_youtube, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+    """, (
+        "cinematic_jobelessboy_solarsystem_169",
+        "സൗരയൂഥ രഹസ്യങ്ങൾ (Solar System Mysteries)",
+        "widescreen_169",
+        "/static/videos/cinematic_jobelessboy_solarsystem_169.mp4",
+        "/static/thumbnails/cinematic_jobelessboy_solarsystem_thumb_169.jpg",
+        "സൗരയൂഥത്തിലെ അത്ഭുത രഹസ്യങ്ങൾ — ജോബ്‌ലെസ് ബോയ് ഒപ്പം!",
+        "Astonishing Mysteries of the Solar System with jobelessboy",
+        "നമ്മുടെ സൗരയൂഥത്തിലെ അത്ഭുത സത്യങ്ങളും ശനിയുടെ വളയങ്ങളും വിശദീകരിച്ച് ഔദ്യോഗിക അവതാരകൻ ജോബ്‌ലെസ് ബോയ്!",
+        duration,
+        0
+    ))
+    cursor.execute("""
+        INSERT OR REPLACE INTO published_videos 
+        (id, topic_title, format_type, video_path, thumbnail_path, title_malayalam, title_english, description_malayalam, duration_sec, published_to_youtube, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+    """, (
+        "cinematic_jobelessboy_solarsystem_916",
+        "സൗരയൂഥ രഹസ്യങ്ങൾ (Solar System Mysteries Shorts)",
+        "shorts_916",
+        "/static/videos/cinematic_jobelessboy_solarsystem_916.mp4",
+        "/static/thumbnails/cinematic_jobelessboy_solarsystem_thumb_169.jpg",
+        "ശനിയുടെ വളയങ്ങൾ ഉണ്ടാക്കിയത് എങ്ങനെ? 🪐✨ #Shorts",
+        "How Were Saturn's Rings Formed? with jobelessboy #Shorts",
+        "ശനിയുടെ മനോഹരമായ വളയങ്ങളുടെ രഹസ്യങ്ങൾ അറിയൂ! #shorts #space #malayalam",
+        duration,
+        0
+    ))
+    conn.commit()
+    conn.close()
+
+    total_time = time.time() - start_time
+    print(f"\nAll operations completed successfully in {total_time:.1f} seconds!")
+    print(f"16:9 Video: file:///{out_169}")
+    print(f"9:16 Video: file:///{out_916}")
+
+if __name__ == "__main__":
+    asyncio.run(run_pipeline())
