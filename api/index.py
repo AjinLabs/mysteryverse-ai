@@ -1,6 +1,5 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, APIRouter, Query
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import datetime
 
@@ -17,6 +16,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+router = APIRouter()
 
 MOCK_TOPICS = [
     {
@@ -120,7 +121,7 @@ OFFICIAL_VIDEOS = [
     }
 ]
 
-@app.get("/api/health")
+@router.get("/health")
 def health():
     return {
         "status": "healthy",
@@ -131,7 +132,7 @@ def health():
         "channel": "@MYSTERYVERSE-MALAYALAM"
     }
 
-@app.get("/api/dashboard/stats")
+@router.get("/dashboard/stats")
 def dashboard_stats():
     return {
         "channel": {
@@ -194,7 +195,7 @@ def dashboard_stats():
         ]
     }
 
-@app.get("/api/dashboard/system-status")
+@router.get("/dashboard/system-status")
 def system_status():
     return {
         "status": "healthy",
@@ -204,11 +205,11 @@ def system_status():
         "scheduler_running": True
     }
 
-@app.get("/api/content/topics")
+@router.get("/content/topics")
 def get_topics():
     return MOCK_TOPICS
 
-@app.get("/api/content/scripts")
+@router.get("/content/scripts")
 def get_scripts():
     return [
         {
@@ -221,38 +222,38 @@ def get_scripts():
         }
     ]
 
-@app.get("/api/content/videos")
+@router.get("/content/videos")
 def get_videos():
     return OFFICIAL_VIDEOS
 
-@app.post("/api/workflow/run-cycle")
+@router.post("/workflow/run-cycle")
 def run_cycle():
     return {
         "status": "success",
         "message": "Autonomous workflow cycle processed successfully for @MYSTERYVERSE-MALAYALAM"
     }
 
-@app.post("/api/workflow/discover")
+@router.post("/workflow/discover")
 def discover(limit: int = 3):
     return {"status": "success", "count": limit}
 
-@app.post("/api/workflow/generate-script")
+@router.post("/workflow/generate-script")
 def generate_script(topic_id: str = ""):
     return {"status": "success", "topic_id": topic_id}
 
-@app.post("/api/workflow/produce-video")
+@router.post("/workflow/produce-video")
 def produce_video(data: Dict[str, Any] = None):
     return {"status": "success", "message": "Video production queued"}
 
-@app.post("/api/workflow/scheduler/start")
+@router.post("/workflow/scheduler/start")
 def start_scheduler():
     return {"status": "running", "autonomous_mode": True}
 
-@app.post("/api/workflow/scheduler/stop")
+@router.post("/workflow/scheduler/stop")
 def stop_scheduler():
     return {"status": "stopped", "autonomous_mode": False}
 
-@app.get("/api/youtube/status")
+@router.get("/youtube/status")
 def youtube_status():
     return {
         "is_authenticated": True,
@@ -260,19 +261,19 @@ def youtube_status():
         "channel_handle": "@MYSTERYVERSE-MALAYALAM"
     }
 
-@app.get("/api/youtube/auth-url")
+@router.get("/youtube/auth-url")
 def youtube_auth_url():
     return {"auth_url": "https://accounts.google.com/o/oauth2/auth"}
 
-@app.post("/api/youtube/demo-connect")
+@router.post("/youtube/demo-connect")
 def demo_connect(data: Dict[str, Any] = None):
     return {"connected": True}
 
-@app.post("/api/youtube/disconnect")
+@router.post("/youtube/disconnect")
 def youtube_disconnect():
     return {"disconnected": True}
 
-@app.get("/api/youtube/audit")
+@router.get("/youtube/audit")
 def youtube_audit():
     return {
         "is_authorized": True,
@@ -318,7 +319,7 @@ def youtube_audit():
         ]
     }
 
-@app.get("/api/settings/monetisation")
+@router.get("/settings/monetisation")
 def monetisation_data():
     return {
         "subscribers": 14200,
@@ -335,3 +336,6 @@ def monetisation_data():
         "advanced_features": True,
         "eligible": False
     }
+
+app.include_router(router, prefix="/api")
+app.include_router(router)

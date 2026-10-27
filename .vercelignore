@@ -1,0 +1,11 @@
+node_modules
+frontend/node_modules
+backend/
+output/
+docs/
+scripts/
+tests/
+.git
+.venv
+*.pyc
+__pycache__
