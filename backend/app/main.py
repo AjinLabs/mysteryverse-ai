@@ -29,16 +29,11 @@ async def lifespan(app: FastAPI):
         logger.warning("Could not initialize character sprites on startup: %s", e)
 
     log_event("INFO", "System", "MYSTERYVERSE AI Backend Server Initialized")
-    
-    # Auto-start autonomous scheduler on boot (zero-human intervention)
-    from app.scheduler import scheduler
-    scheduler.start()
-    logger.info("Autonomous Workflow Scheduler automatically started on boot.")
+    logger.info("Autonomous Workflow Scheduler ready in on-demand mode.")
     
     yield
     # Shutdown
     logger.info("Shutting down MYSTERYVERSE AI...")
-    scheduler.stop()
 
 app = FastAPI(
     title=settings.APP_NAME,
