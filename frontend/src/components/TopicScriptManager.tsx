@@ -56,7 +56,7 @@ export const TopicScriptManager: React.FC<TopicScriptManagerProps> = ({
             }`}
           >
             <FileText className="w-4 h-4" />
-            <span>Malayalam Scripts ({scripts.length})</span>
+            <span>Episode Scripts ({scripts.length})</span>
           </button>
         </div>
 
@@ -196,7 +196,7 @@ export const TopicScriptManager: React.FC<TopicScriptManagerProps> = ({
                   </button>
                 </div>
 
-                {/* Malayalam Script Sections */}
+                {/* Script Sections */}
                 <div className="space-y-3 font-malayalam text-xs leading-relaxed max-h-80 overflow-y-auto pr-2">
                   <div className="p-3 rounded-lg bg-amber-950/30 border border-amber-500/20">
                     <div className="font-sans font-bold text-[11px] text-amber-300 mb-1">
@@ -243,7 +243,7 @@ export const TopicScriptManager: React.FC<TopicScriptManagerProps> = ({
               </div>
             ) : (
               <div className="h-full flex items-center justify-center text-slate-500 text-xs italic">
-                Select a script from the list to view its narration, Malayalam text, and 3D scene cues.
+                Select a script from the list to view its narration, narration text, and 3D scene cues.
               </div>
             )}
           </div>

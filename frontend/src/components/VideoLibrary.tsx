@@ -32,7 +32,7 @@ export const VideoLibrary: React.FC<VideoLibraryProps> = ({ videos, onRefresh })
             </span>
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Full HD MP4s assembled with Malayalam voiceover, jobelessboy procedural host, and verified subtitles.
+            Full HD MP4s assembled with English voiceover, jobelessboy procedural host, and verified subtitles.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export const VideoLibrary: React.FC<VideoLibraryProps> = ({ videos, onRefresh })
           <Film className="w-12 h-12 text-slate-600 mx-auto mb-3" />
           <h3 className="text-base font-semibold text-slate-300">No Videos Produced Yet</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto mt-1">
-            Click 'Run Pipeline' or enable Autonomous Mode to discover topics, author Malayalam scripts, and render videos.
+            Click 'Run Pipeline' or enable Autonomous Mode to discover topics, author English scripts, and render videos.
           </p>
         </div>
       ) : (
@@ -111,7 +111,7 @@ export const VideoLibrary: React.FC<VideoLibraryProps> = ({ videos, onRefresh })
                   {/* Title & Info */}
                   <div className="p-4">
                     <h3 className="font-malayalam font-bold text-sm text-slate-100 line-clamp-2 leading-relaxed">
-                      {vid.mal_title || vid.topic_title || 'Untitled Malayalam Video'}
+                      {vid.mal_title || vid.topic_title || 'Untitled MysteryVerse Video'}
                     </h3>
                     
                     <div className="text-xs text-slate-400 mt-1 line-clamp-1 font-mono">

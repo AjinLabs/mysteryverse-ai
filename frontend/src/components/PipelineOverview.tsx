@@ -38,8 +38,8 @@ export const PipelineOverview: React.FC<PipelineOverviewProps> = ({
     },
     {
       id: 'script',
-      title: '2. Malayalam Scripts',
-      desc: 'Authentic Malayalam flow',
+      title: '2. English Scripts',
+      desc: 'Scientific storytelling',
       count: counts?.total_scripts ?? 0,
       badge: 'Scripts',
       icon: FileText,
@@ -59,7 +59,7 @@ export const PipelineOverview: React.FC<PipelineOverviewProps> = ({
     {
       id: 'audio',
       title: '4. Voice & SRT',
-      desc: 'Neural Malayalam TTS',
+      desc: 'Broadcast Neural Voice',
       count: counts?.rendering_jobs ?? 0,
       badge: 'Voicing',
       icon: Mic,

@@ -136,7 +136,7 @@ export const CharacterStudio: React.FC = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                <span><strong>Authentic Malayalam Narration:</strong> Conversational tone avoiding stilted formal jargon while preserving rich vocabulary.</span>
+                <span><strong>Authentic English Narration:</strong> Conversational, engaging tone suited for global science mysteries and curiosity.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 flex-shrink-0" />

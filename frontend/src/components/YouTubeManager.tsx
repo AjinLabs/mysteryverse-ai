@@ -115,7 +115,7 @@ export const YouTubeManager: React.FC<YouTubeManagerProps> = ({ onRefresh }) => 
                   <ExternalLink className="w-3 h-3" />
                 </a>
                 <span>•</span>
-                <span>Language: Malayalam (മലയാളം)</span>
+                <span>Language: English (Global)</span>
                 <span>•</span>
                 <span>Category: Education (27)</span>
               </div>
