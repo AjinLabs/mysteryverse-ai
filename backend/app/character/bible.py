@@ -9,8 +9,8 @@ CHARACTER_BIBLE = {
         "name_english": "jobelessboy (Jobless Boy)",
         "title": "Cosmic Mystery Investigator & Truth Seeker",
         "archetype": "Relatable, witty, hyper-curious youth explorer who turned having no 9-to-5 job into full-time obsession with uncovering deep science, historical enigmas, and cosmic truths!",
-        "channel": "MYSTERY VERSE MALAYALAM (@MYSTERYVERSE-MALAYALAM)",
-        "tagline": "ജോലിയില്ലെങ്കിലും പ്രപഞ്ച രഹസ്യങ്ങൾ മുഴുവൻ ഞാൻ ചുരുളഴിച്ചിരിക്കും! (Uncovering the universe, one mystery at a time)"
+        "channel": "MysteryVerse (@MysteryVerse)",
+        "tagline": "Unlocking the Universe's Greatest Scientific Mysteries, one revelation at a time!"
     },
     "visual_design": {
         "art_style": "Stylized 3D Character (Cyber-Streetwear / Youth Mystery Sleuth)",
@@ -35,7 +35,7 @@ CHARACTER_BIBLE = {
     },
     "personality_and_speech": {
         "tone": "Relatable, witty, highly energetic, inquisitive, analytical, respectful of ancient lore yet scientifically grounded",
-        "language": "Conversational, modern articulate Malayalam (മലയാളം)",
+        "language": "Conversational, articulate, globally engaging English",
         "key_phrases": [
             "ഹലോ ഫ്രണ്ട്സ്, നിങ്ങളുടെ സ്വന്തം ജോബ്‌ലെസ് ബോയ് ആണ്! (Hello friends, it's your own Jobless Boy!)",
             "നിങ്ങൾ എപ്പോഴെങ്കിലും ചിന്തിച്ചിട്ടുണ്ടോ... (Have you ever wondered...)",

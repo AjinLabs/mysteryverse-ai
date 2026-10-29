@@ -17,13 +17,13 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || (
 // Fallback Mock Data for standalone Vercel preview when local Python backend is not connected
 const MOCK_STATS: DashboardStats = {
   channel: {
-    name: 'MYSTERY VERSE MALAYALAM',
-    handle: '@MYSTERYVERSE-MALAYALAM',
+    name: 'MysteryVerse',
+    handle: '@MysteryVerse',
     is_connected: true,
     connected_info: {
       channel_id: 'UC_mysteryverse_official',
-      title: 'MYSTERY VERSE MALAYALAM',
-      handle: '@MYSTERYVERSE-MALAYALAM',
+      title: 'MysteryVerse',
+      handle: '@MysteryVerse',
       subscriber_count: 14200,
       video_count: 60,
       view_count: 894000,
@@ -63,19 +63,19 @@ const MOCK_STATS: DashboardStats = {
     daily_quota_limit: 10000
   },
   character: {
-    name_malayalam: 'ജോബ്‌ലെസ്സ് ബോയ്',
+    name_malayalam: 'jobelessboy',
     name_english: 'jobelessboy',
-    title: 'The Young Explorer',
-    archetype: 'Curious Pixar-style Explorer Kid',
-    channel: 'MYSTERY VERSE MALAYALAM',
-    tagline: 'ലോകത്തിലെ അവിശ്വസനീയ രഹസ്യങ്ങൾ ലളിതമായി!'
+    title: 'The Scientific Explorer',
+    archetype: 'Curious Pixar-style Explorer Host',
+    channel: 'MysteryVerse',
+    tagline: 'Unlocking the Universe\'s Greatest Scientific Mysteries'
   },
   recent_logs: [
     {
       id: 1,
       level: 'INFO',
       source: 'render_engine',
-      message: 'Channel Intro 9:16 Shorts & 16:9 Widescreen rendered with jobelessboy host and synced subtitles.',
+      message: 'What If the Sun Disappeared? (Shorts 9:16 & 5-Min Full HD) rendered with jobelessboy host and synced subtitles.',
       created_at: new Date().toISOString()
     },
     {
@@ -91,8 +91,8 @@ const MOCK_STATS: DashboardStats = {
 const MOCK_TOPICS: TopicItem[] = [
   {
     id: 'top_intro_official',
-    title: 'MysteryVerse Malayalam — Official 3D Channel Introduction',
-    mal_title: 'മിസ്റ്ററി വേഴ്സ് മലയാളം — ഒഫീഷ്യൽ 3D ചാനൽ ഇൻട്രൊഡക്ഷൻ',
+    title: 'What If the Sun Disappeared? Science Thought Experiment',
+    mal_title: 'What If the Sun Disappeared? Science Thought Experiment',
     category: 'Channel Intro',
     format: 'short',
     potential_interest_score: 99.5,
@@ -107,7 +107,7 @@ const MOCK_TOPICS: TopicItem[] = [
   {
     id: 'top_solarsystem_secrets',
     title: 'Solar System Secrets: Planetary Orbits & Cosmic Mysteries',
-    mal_title: 'സൗരയൂഥത്തിന്റെ അത്ഭുത രഹസ്യങ്ങൾ!',
+    mal_title: 'Solar System Secrets: Planetary Orbits & Cosmic Mysteries',
     category: 'Science & Space',
     format: 'short',
     potential_interest_score: 98.0,
@@ -122,7 +122,7 @@ const MOCK_TOPICS: TopicItem[] = [
   {
     id: 'top_mariana_deep',
     title: 'The Mariana Trench Challenger Deep: Life in Complete Darkness',
-    mal_title: 'സമുദ്രത്തിന്റെ അഗാധതയിൽ 11 കിലോമീറ്റർ താഴെ! മരിയാന ട്രെഞ്ചിലെ അജ്ഞാത ജീവികൾ',
+    mal_title: 'The Mariana Trench Challenger Deep: Life in Complete Darkness',
     category: 'Ocean & Nature',
     format: 'short',
     potential_interest_score: 95.0,
@@ -137,7 +137,7 @@ const MOCK_TOPICS: TopicItem[] = [
   {
     id: 'top_great_pyramid',
     title: 'The Great Pyramid of Giza: Astronomical Alignment & Lost Engineering',
-    mal_title: 'ഗിസയിലെ പിരമിഡുകൾ നിർമ്മിച്ചതിന്റെ അവിശ്വസനീയ രഹസ്യം!',
+    mal_title: 'The Great Pyramid of Giza: Astronomical Alignment & Lost Engineering',
     category: 'History & Civilisations',
     format: 'long',
     potential_interest_score: 94.0,
@@ -153,37 +153,37 @@ const MOCK_TOPICS: TopicItem[] = [
 
 const MOCK_VIDEOS: VideoItem[] = [
   {
-    id: 'mysteryverse_intro_short',
-    title: 'MysteryVerse Malayalam — Introduction Short (9:16 Vertical)',
-    script_id: 'scr_mysteryverse_intro_short',
+    id: 'mysteryverse_sun_short',
+    title: 'What If the Sun Suddenly Disappeared? (9:16 Shorts)',
+    script_id: 'scr_mysteryverse_sun_short',
     topic_id: 'top_mysteryverse_intro',
-    topic_title: 'MysteryVerse Malayalam Channel Introduction Short',
-    mal_title: 'അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | Official Short',
+    topic_title: 'What If the Sun Suddenly Disappeared?',
+    mal_title: 'What If the Sun Suddenly Disappeared?',
     video_type: 'short',
     resolution: '1080x1920',
-    duration_sec: 44.57,
+    duration_sec: 44.23,
     render_engine: 'cinematic_production_director',
     status: 'ready_for_upload',
     quality_passed: true,
-    thumbnail_url: '/static/thumbnails/mysteryverse_intro_short_thumb.jpg',
-    video_url: '/static/videos/mysteryverse_intro_short.mp4',
+    thumbnail_url: '/static/thumbnails/mysteryverse_sun_short_thumb.jpg',
+    video_url: '/static/videos/mysteryverse_sun_short.mp4',
     created_at: new Date().toISOString()
   },
   {
-    id: 'mysteryverse_intro_long',
-    title: 'MysteryVerse Malayalam — Cinematic Channel Introduction (16:9 Full HD)',
-    script_id: 'scr_mysteryverse_intro_long',
+    id: 'mysteryverse_sun_long',
+    title: 'What If the Sun Disappeared? The 5-Minute Scientific Truth (16:9 Full HD)',
+    script_id: 'scr_mysteryverse_sun_long',
     topic_id: 'top_mysteryverse_intro',
-    topic_title: 'MysteryVerse Malayalam Full Channel Introduction',
-    mal_title: 'അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | 16:9 Cinematic Video',
+    topic_title: 'What If the Sun Disappeared? Complete Scientific Breakdown',
+    mal_title: 'What If the Sun Disappeared? Complete Scientific Breakdown',
     video_type: 'long',
     resolution: '1920x1080',
-    duration_sec: 160.68,
+    duration_sec: 300.48,
     render_engine: 'cinematic_production_director',
     status: 'ready_for_upload',
     quality_passed: true,
-    thumbnail_url: '/static/thumbnails/mysteryverse_intro_long_thumb.jpg',
-    video_url: '/static/videos/mysteryverse_intro_long.mp4',
+    thumbnail_url: '/static/thumbnails/mysteryverse_sun_long_thumb.jpg',
+    video_url: '/static/videos/mysteryverse_sun_long.mp4',
     created_at: new Date().toISOString()
   }
 ];
@@ -314,9 +314,9 @@ export const api = {
     }
     return {
       connected: true,
-      channel_id: 'UC_MYSTERYVERSE_MALAYALAM',
-      channel_title: 'MYSTERY VERSE MALAYALAM',
-      handle: '@MYSTERYVERSE-MALAYALAM',
+      channel_id: 'UC_MYSTERYVERSE',
+      channel_title: 'MysteryVerse',
+      handle: '@MysteryVerse',
       subscriber_count: 14200,
       video_count: 60,
       view_count: 894000,
@@ -367,13 +367,13 @@ export const api = {
     }
     return {
       is_authorized: true,
-      target_channel_name: 'MYSTERY VERSE MALAYALAM',
-      target_channel_handle: '@MYSTERYVERSE-MALAYALAM',
-      target_channel_url: 'https://www.youtube.com/@MYSTERYVERSE-MALAYALAM',
+      target_channel_name: 'MysteryVerse',
+      target_channel_handle: '@MysteryVerse',
+      target_channel_url: 'https://www.youtube.com/@MysteryVerse',
       connected_channel: {
         channel_id: 'UC_mysteryverse_official',
-        title: 'MYSTERY VERSE MALAYALAM',
-        handle: '@MYSTERYVERSE-MALAYALAM',
+        title: 'MysteryVerse',
+        handle: '@MysteryVerse',
         subscriber_count: 14200,
         video_count: 60,
         view_count: 894000,
@@ -383,9 +383,9 @@ export const api = {
       },
       target_matched: true,
       api_accessible_settings: {
-        title: 'MYSTERY VERSE MALAYALAM',
+        title: 'MysteryVerse',
         category_id: '27 (Education)',
-        default_language: 'ml (Malayalam)'
+        default_language: 'en (English)'
       },
       manual_action_items: [
         {
@@ -403,8 +403,8 @@ export const api = {
         {
           setting: 'Language & Captions Certification',
           status: 'CONFIGURED',
-          reason: 'Video spoken language is Malayalam, subtitles are in English.',
-          instruction: 'Set Video language to Malayalam and Captions to "None" or English captions provided by system.'
+          reason: 'Video spoken language is English with synchronized English captions.',
+          instruction: 'Set Video language to English and Captions to English provided by system.'
         }
       ]
     };
@@ -451,7 +451,7 @@ export const api = {
       AUTONOMOUS_SCHEDULER_ACTIVE: 'true',
       EMERGENCY_KILLSWITCH: 'false',
       AUTO_PUBLISH_ENABLED: 'true',
-      TARGET_CHANNEL_HANDLE: '@MYSTERYVERSE-MALAYALAM'
+      TARGET_CHANNEL_HANDLE: '@MysteryVerse'
     };
   },
 

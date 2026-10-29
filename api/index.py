@@ -5,7 +5,7 @@ import datetime
 
 app = FastAPI(
     title="MysteryVerse AI Autonomous Media Suite",
-    description="Fullstack API for MysteryVerse Malayalam (@MYSTERYVERSE-MALAYALAM)",
+    description="Fullstack API for MysteryVerse (@MysteryVerse)",
     version="1.0.0"
 )
 
@@ -22,12 +22,12 @@ router = APIRouter()
 MOCK_TOPICS = [
     {
         "id": "top_official_intro",
-        "title": "MysteryVerse Malayalam — Official 3D Channel Introduction",
-        "mal_title": "അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | Official 3D Intro",
+        "title": "MysteryVerse — Official 3D Channel Introduction",
+        "mal_title": "What If the Sun Disappeared? Science Thought Experiment",
         "category": "Official Introduction",
         "format": "both",
         "potential_interest_score": 99.9,
-        "source_references": ["https://youtube.com/@MYSTERYVERSE-MALAYALAM"],
+        "source_references": ["https://youtube.com/@MysteryVerse"],
         "retrieved_at": datetime.datetime.now().isoformat(),
         "fact_status": "verified",
         "fact_confidence": 0.99,
@@ -38,7 +38,7 @@ MOCK_TOPICS = [
     {
         "id": "top_solarsystem_secrets",
         "title": "Solar System Secrets: Planetary Orbits & Cosmic Mysteries",
-        "mal_title": "സൗരയൂഥത്തിന്റെ അത്ഭുത രഹസ്യങ്ങൾ!",
+        "mal_title": "Solar System Secrets: Planetary Orbits & Cosmic Mysteries",
         "category": "Science & Space",
         "format": "short",
         "potential_interest_score": 98.0,
@@ -53,7 +53,7 @@ MOCK_TOPICS = [
     {
         "id": "top_mariana_deep",
         "title": "The Mariana Trench Challenger Deep: Life in Complete Darkness",
-        "mal_title": "സമുദ്രത്തിന്റെ അഗാധതയിൽ 11 കിലോമീറ്റർ താഴെ! മരിയാന ട്രെഞ്ചിലെ അജ്ഞാത ജീവികൾ",
+        "mal_title": "The Mariana Trench Challenger Deep: Life in Complete Darkness",
         "category": "Ocean & Nature",
         "format": "short",
         "potential_interest_score": 95.0,
@@ -68,7 +68,7 @@ MOCK_TOPICS = [
     {
         "id": "top_great_pyramid",
         "title": "The Great Pyramid of Giza: Astronomical Alignment & Lost Engineering",
-        "mal_title": "ഗിസയിലെ പിരമിഡുകൾ നിർമ്മിച്ചതിന്റെ അവിശ്വസനീയ രഹസ്യം!",
+        "mal_title": "The Great Pyramid of Giza: Astronomical Alignment & Lost Engineering",
         "category": "History & Civilisations",
         "format": "long",
         "potential_interest_score": 94.0,
@@ -84,39 +84,39 @@ MOCK_TOPICS = [
 
 OFFICIAL_VIDEOS = [
     {
-        "id": "mysteryverse_intro_short",
-        "title": "MysteryVerse Malayalam — Introduction Short (9:16 Vertical)",
-        "script_id": "scr_mysteryverse_intro_short",
+        "id": "mysteryverse_sun_short",
+        "title": "What If the Sun Suddenly Disappeared? (9:16 Shorts)",
+        "script_id": "scr_mysteryverse_sun_short",
         "topic_id": "top_official_intro",
-        "topic_title": "MysteryVerse Malayalam Channel Introduction Short",
-        "mal_title": "അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | Official Short",
+        "topic_title": "What If the Sun Suddenly Disappeared?",
+        "mal_title": "What If the Sun Suddenly Disappeared?",
         "video_type": "short",
         "resolution": "1080x1920",
-        "duration_sec": 44.57,
+        "duration_sec": 44.23,
         "render_engine": "cinematic_production_director",
         "status": "ready_for_upload",
         "quality_passed": True,
-        "thumbnail_url": "/static/thumbnails/mysteryverse_intro_short_thumb.jpg",
-        "video_url": "/static/videos/mysteryverse_intro_short.mp4",
-        "subtitles_url": "/static/subtitles/intro_short_en.srt",
+        "thumbnail_url": "/static/thumbnails/mysteryverse_sun_short_thumb.jpg",
+        "video_url": "/static/videos/mysteryverse_sun_short.mp4",
+        "subtitles_url": "/static/subtitles/sun_short_en.srt",
         "created_at": "2026-10-27T06:52:49Z"
     },
     {
-        "id": "mysteryverse_intro_long",
-        "title": "MysteryVerse Malayalam — Cinematic Channel Introduction (16:9 Full HD)",
-        "script_id": "scr_mysteryverse_intro_long",
+        "id": "mysteryverse_sun_long",
+        "title": "What If the Sun Disappeared? The 5-Minute Scientific Truth (16:9 Full HD)",
+        "script_id": "scr_mysteryverse_sun_long",
         "topic_id": "top_official_intro",
-        "topic_title": "MysteryVerse Malayalam Full Channel Introduction",
-        "mal_title": "അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം! | 16:9 Cinematic Video",
+        "topic_title": "What If the Sun Disappeared? Complete Scientific Breakdown",
+        "mal_title": "What If the Sun Disappeared? Complete Scientific Breakdown",
         "video_type": "long",
         "resolution": "1920x1080",
-        "duration_sec": 160.68,
+        "duration_sec": 300.48,
         "render_engine": "cinematic_production_director",
         "status": "ready_for_upload",
         "quality_passed": True,
-        "thumbnail_url": "/static/thumbnails/mysteryverse_intro_long_thumb.jpg",
-        "video_url": "/static/videos/mysteryverse_intro_long.mp4",
-        "subtitles_url": "/static/subtitles/intro_long_en.srt",
+        "thumbnail_url": "/static/thumbnails/mysteryverse_sun_long_thumb.jpg",
+        "video_url": "/static/videos/mysteryverse_sun_long.mp4",
+        "subtitles_url": "/static/subtitles/sun_long_en.srt",
         "created_at": "2026-10-27T06:52:49Z"
     }
 ]
@@ -129,20 +129,20 @@ def health():
         "version": "1.0.0",
         "platform": "Vercel Fullstack",
         "host": "jobelessboy",
-        "channel": "@MYSTERYVERSE-MALAYALAM"
+        "channel": "@MysteryVerse"
     }
 
 @router.get("/dashboard/stats")
 def dashboard_stats():
     return {
         "channel": {
-            "name": "MYSTERY VERSE MALAYALAM",
-            "handle": "@MYSTERYVERSE-MALAYALAM",
+            "name": "MysteryVerse",
+            "handle": "@MysteryVerse",
             "is_connected": True,
             "connected_info": {
                 "channel_id": "UC_mysteryverse_official",
-                "title": "MYSTERY VERSE MALAYALAM",
-                "handle": "@MYSTERYVERSE-MALAYALAM",
+                "title": "MysteryVerse",
+                "handle": "@MysteryVerse",
                 "subscriber_count": 14200,
                 "video_count": 60,
                 "view_count": 894000,
@@ -183,14 +183,14 @@ def dashboard_stats():
                 "timestamp": datetime.datetime.now().isoformat(),
                 "level": "INFO",
                 "component": "ProductionDirector",
-                "message": "Rendered mysteryverse_intro_long.mp4 (16:9 Full HD) with jobelessboy host"
+                "message": "Rendered mysteryverse_sun_long.mp4 (16:9 Full HD) with jobelessboy host"
             },
             {
                 "id": 2,
                 "timestamp": datetime.datetime.now().isoformat(),
                 "level": "INFO",
                 "component": "ProductionDirector",
-                "message": "Rendered mysteryverse_intro_short.mp4 (9:16 Shorts) with jobelessboy host"
+                "message": "Rendered mysteryverse_sun_short.mp4 (9:16 Shorts) with jobelessboy host"
             }
         ]
     }
@@ -215,8 +215,8 @@ def get_scripts():
         {
             "id": "scr_mysteryverse_intro_official",
             "topic_id": "top_official_intro",
-            "malayalam_narration": "നമസ്കാരം കൂട്ടുകാരേ! MysteryVerse Malayalam-ലേക്ക് എല്ലാവർക്കും സ്വാഗതം! ഈ ലോകം നിറയെ നമ്മളെ അത്ഭുതപ്പെടുത്തുന്ന കാര്യങ്ങളുണ്ട്...",
-            "english_translation": "Hey friends! Welcome to MysteryVerse Malayalam! This world is full of things that amaze us...",
+            "malayalam_narration": "Imagine waking up one morning and looking outside your window. The sky is completely dark. The sunlight is gone...",
+            "english_translation": "Imagine waking up one morning and looking outside your window. The sky is completely dark. The sunlight is gone...",
             "status": "approved",
             "created_at": datetime.datetime.now().isoformat()
         }
@@ -230,7 +230,7 @@ def get_videos():
 def run_cycle():
     return {
         "status": "success",
-        "message": "Autonomous workflow cycle processed successfully for @MYSTERYVERSE-MALAYALAM"
+        "message": "Autonomous workflow cycle processed successfully for @MysteryVerse"
     }
 
 @router.post("/workflow/discover")
@@ -257,8 +257,8 @@ def stop_scheduler():
 def youtube_status():
     return {
         "is_authenticated": True,
-        "channel_name": "MYSTERY VERSE MALAYALAM",
-        "channel_handle": "@MYSTERYVERSE-MALAYALAM"
+        "channel_name": "MysteryVerse",
+        "channel_handle": "@MysteryVerse"
     }
 
 @router.get("/youtube/auth-url")
@@ -277,13 +277,13 @@ def youtube_disconnect():
 def youtube_audit():
     return {
         "is_authorized": True,
-        "target_channel_name": "MYSTERY VERSE MALAYALAM",
-        "target_channel_handle": "@MYSTERYVERSE-MALAYALAM",
-        "target_channel_url": "https://www.youtube.com/@MYSTERYVERSE-MALAYALAM",
+        "target_channel_name": "MysteryVerse",
+        "target_channel_handle": "@MysteryVerse",
+        "target_channel_url": "https://www.youtube.com/@MysteryVerse",
         "connected_channel": {
             "channel_id": "UC_mysteryverse_official",
-            "title": "MYSTERY VERSE MALAYALAM",
-            "handle": "@MYSTERYVERSE-MALAYALAM",
+            "title": "MysteryVerse",
+            "handle": "@MysteryVerse",
             "subscriber_count": 14200,
             "video_count": 60,
             "view_count": 894000,
@@ -293,9 +293,9 @@ def youtube_audit():
         },
         "target_matched": True,
         "api_accessible_settings": {
-            "title": "MYSTERY VERSE MALAYALAM",
+            "title": "MysteryVerse",
             "category_id": "27 (Education)",
-            "default_language": "ml (Malayalam)"
+            "default_language": "en (English)"
         },
         "manual_action_items": [
             {
@@ -313,8 +313,8 @@ def youtube_audit():
             {
                 "setting": "Language & Captions Certification",
                 "status": "CONFIGURED",
-                "reason": "Video spoken language is Malayalam, subtitles are in English.",
-                "instruction": "Set Video language to Malayalam and Captions to 'None' or English captions provided by system."
+                "reason": "Video spoken language is English with synchronized English captions.",
+                "instruction": "Set Video language to English and Captions to English captions provided by system."
             }
         ]
     }

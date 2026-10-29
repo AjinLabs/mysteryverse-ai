@@ -19,9 +19,9 @@ for directory in [DATA_DIR, STATIC_DIR, VIDEOS_DIR, THUMBNAILS_DIR, AUDIO_DIR, S
 DB_PATH = DATA_DIR / "mysteryverse.db"
 
 # Official Channel Target
-TARGET_CHANNEL_NAME = "MYSTERY VERSE MALAYALAM"
-TARGET_CHANNEL_HANDLE = "@MYSTERYVERSE-MALAYALAM"
-TARGET_CHANNEL_URL = "https://www.youtube.com/@MYSTERYVERSE-MALAYALAM"
+TARGET_CHANNEL_NAME = "MysteryVerse"
+TARGET_CHANNEL_HANDLE = "@MysteryVerse"
+TARGET_CHANNEL_URL = "https://www.youtube.com/@MysteryVerse"
 
 # Monthly Production Targets
 TARGET_SHORTS_PER_MONTH = 30
@@ -29,8 +29,8 @@ TARGET_LONGS_PER_MONTH = 30
 
 # Free-Tier Audio Settings (Malayalam Neural Voices)
 # Tuned for energetic, high-reach, charismatic Malayalam kid voice for jobelessboy
-DEFAULT_MALE_VOICE = "ml-IN-MidhunNeural"
-DEFAULT_FEMALE_VOICE = "ml-IN-SobhanaNeural"
+DEFAULT_MALE_VOICE = "en-US-AndrewNeural"
+DEFAULT_FEMALE_VOICE = "en-US-AvaNeural"
 DEFAULT_VOICE_RATE = "+10%"
 DEFAULT_VOICE_PITCH = "+24Hz"
 

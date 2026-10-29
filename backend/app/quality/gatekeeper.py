@@ -50,18 +50,16 @@ class QualityGatekeeper:
         if not passed_fact:
             critical_failures.append(f"Fact check status '{fact_status}' (confidence: {fact_confidence}%) does not meet publishing safety criteria")
 
-        # 3. Malayalam Script & Language Integrity
-        full_script = script.get("full_script_mal", "")
-        # Verify Malayalam Unicode block (\u0D00-\u0D7F)
-        malayalam_chars = [c for c in full_script if '\u0D00' <= c <= '\u0D7F']
-        has_malayalam = len(malayalam_chars) > 20
+        # 3. Script & Language Integrity (English & Global Audience)
+        full_script = script.get("full_script_en", "") or script.get("full_script_mal", "") or script.get("narration", "")
+        has_script = len(full_script.strip().split()) >= 10
         checks["language_integrity"] = {
-            "language": "Malayalam",
-            "malayalam_char_count": len(malayalam_chars),
-            "passed": has_malayalam
+            "language": "English",
+            "word_count": len(full_script.strip().split()),
+            "passed": has_script
         }
-        if not has_malayalam:
-            critical_failures.append("Script does not contain sufficient verified Malayalam text")
+        if not has_script:
+            critical_failures.append("Script does not contain sufficient verified narration text")
 
         # 4. Video & Audio File Integrity (FFmpeg ffprobe verification)
         video_path = video_job.get("video_path")
