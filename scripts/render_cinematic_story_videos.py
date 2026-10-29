@@ -1,5 +1,5 @@
 """
-MysteryVerse Malayalam — Cinematic Multi-Scene Animated Film Producer
+MysteryVerse — Cinematic Multi-Scene Animated Film Producer
 Recreates from scratch:
 1. output/mysteryverse_intro_short.mp4 (9:16 Vertical, 1080x1920, 45-60s)
 2. output/mysteryverse_intro_long.mp4 (16:9 Horizontal, 1920x1080, 3-5 min)
@@ -23,7 +23,7 @@ STRICT USER & SECTION 8 COMPLIANCE:
   * ABSOLUTELY NO black caption boxes, borders, banners, or floating badges.
   * ZERO Malayalam written text anywhere on screen.
 - AUDIO:
-  * Flawless native Malayalam neural voiceover + subtle cinematic ambient pad (-24dB).
+  * Flawless native English neural voiceover + subtle cinematic ambient pad (-24dB).
 """
 
 import os
@@ -738,12 +738,12 @@ def main():
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     """, (
         "top_official_intro",
-        "MysteryVerse Malayalam — Official 3D Channel Introduction",
-        "MysteryVerse Malayalam — അറിവിന്റെയും നിഗൂഢതകളുടെയും പുതിയ ലോകം",
+        "MysteryVerse — Official 3D Channel Introduction",
+        "MysteryVerse — MysteryVerse MysteryVerse MysteryVerse MysteryVerse",
         "Channel Intro",
         "hybrid",
         100.0,
-        '["https://youtube.com/@MYSTERYVERSE-MALAYALAM"]',
+        '["https://youtube.com/@MysteryVerse"]',
         "produced"
     ))
 
@@ -763,7 +763,7 @@ def main():
         "dynamic_parallax_cinematic_animation",
         "ready_for_upload",
         1,
-        '{"host": "jobelessboy", "title": "ഈ ലോകത്ത് നിങ്ങൾ അറിയാത്ത എത്ര കാര്യങ്ങളുണ്ട്?", "language_policy": "spoken_malayalam_english_text_only", "format": "9:16 Shorts", "fps": 24}'
+        '{"host": "jobelessboy", "title": "MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse?", "language_policy": "spoken_english_english_text", "format": "9:16 Shorts", "fps": 24}'
     ))
 
     c.execute("""
@@ -782,7 +782,7 @@ def main():
         "dynamic_parallax_cinematic_animation",
         "ready_for_upload",
         1,
-        '{"host": "jobelessboy", "title": "MysteryVerse Malayalam — അറിവിന്റെയും നിഗൂഢതകളുടെയും പുതിയ ലോകം", "language_policy": "spoken_malayalam_english_text_only", "format": "16:9 Full HD", "fps": 24}'
+        '{"host": "jobelessboy", "title": "MysteryVerse — MysteryVerse MysteryVerse MysteryVerse MysteryVerse", "language_policy": "spoken_english_english_text", "format": "16:9 Full HD", "fps": 24}'
     ))
 
     conn.commit()

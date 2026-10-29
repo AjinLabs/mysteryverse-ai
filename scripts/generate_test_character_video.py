@@ -43,17 +43,17 @@ async def run_pipeline():
     start_time = time.time()
     print("=" * 70)
     print("MYSTERYVERSE AI - CINEMATIC CHARACTER VIDEO ENGINE")
-    print("Target Character: jobelessboy (ജോബ്‌ലെസ് ബോയ്)")
+    print("Target Character: jobelessboy (MysteryVerse‌MysteryVerse MysteryVerse)")
     print("=" * 70)
 
     # 1. Synthesize Malayalam Voiceover Audio
-    print("\n[Step 1/5] Synthesizing authentic Malayalam narration...")
+    print("\n[Step 1/5] Synthesizing authentic English narration...")
     audio_path = str(AUDIO_DIR / "cinematic_jobelessboy_audio.mp3")
     script_mal = (
-        "നമസ്കാരം കൂട്ടുകാരേ, ഞാൻ നിങ്ങളുടെ സ്വന്തം ജോബ്‌ലെസ് ബോയ്! "
-        "നമ്മുടെ സൗരയൂഥത്തിലെ ഏറ്റവും അത്ഭുതകരമായ രഹസ്യങ്ങൾ നിങ്ങൾക്കറിയാമോ? "
-        "നോക്കൂ, ശനിയുടെ ഈ മനോഹരമായ വളയങ്ങൾ ലക്ഷക്കണക്കിന് മഞ്ഞുപാളികളും പാറകളും കൊണ്ടാണ് നിർമ്മിച്ചിരിക്കുന്നത്! "
-        "പ്രപഞ്ചത്തിലെ ഇത്തരം അത്ഭുത സത്യങ്ങൾ ഇനിയും അറിയാൻ മിസ്റ്ററിവേഴ്സ് മലയാളം ഇപ്പോൾത്തന്നെ സബ്സ്ക്രൈബ് ചെയ്യൂ!"
+        "MysteryVerse MysteryVerse, MysteryVerse MysteryVerse MysteryVerse MysteryVerse‌MysteryVerse MysteryVerse! "
+        "MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse? "
+        "MysteryVerse, MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse! "
+        "MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse!"
     )
     tts = MalayalamTTSService()
     res = await tts.synthesize(script_mal, audio_path, rate="+8%", pitch="+10Hz")
@@ -91,10 +91,10 @@ async def run_pipeline():
     thumb_169 = str(THUMBNAILS_DIR / "cinematic_jobelessboy_solarsystem_thumb_169.jpg")
     thumb_engine.generate_thumbnail(
         output_path=thumb_169,
-        title_mal="സൗരയൂഥ രഹസ്യങ്ങൾ!",
+        title_mal="MysteryVerse MysteryVerse!",
         category="Space",
         expression="excitement",
-        badge_text="സൗരയൂഥ രഹസ്യം!"
+        badge_text="MysteryVerse MysteryVerse!"
     )
     print(f"Generated 16:9 Thumbnail: {thumb_169}")
 
@@ -118,13 +118,13 @@ async def run_pipeline():
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     """, (
         "cinematic_jobelessboy_solarsystem_169",
-        "സൗരയൂഥ രഹസ്യങ്ങൾ (Solar System Mysteries)",
+        "MysteryVerse MysteryVerse (Solar System Mysteries)",
         "widescreen_169",
         "/static/videos/cinematic_jobelessboy_solarsystem_169.mp4",
         "/static/thumbnails/cinematic_jobelessboy_solarsystem_thumb_169.jpg",
-        "സൗരയൂഥത്തിലെ അത്ഭുത രഹസ്യങ്ങൾ — ജോബ്‌ലെസ് ബോയ് ഒപ്പം!",
+        "MysteryVerse MysteryVerse MysteryVerse — MysteryVerse‌MysteryVerse MysteryVerse MysteryVerse!",
         "Astonishing Mysteries of the Solar System with jobelessboy",
-        "നമ്മുടെ സൗരയൂഥത്തിലെ അത്ഭുത സത്യങ്ങളും ശനിയുടെ വളയങ്ങളും വിശദീകരിച്ച് ഔദ്യോഗിക അവതാരകൻ ജോബ്‌ലെസ് ബോയ്!",
+        "MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse‌MysteryVerse MysteryVerse!",
         duration,
         0
     ))
@@ -134,13 +134,13 @@ async def run_pipeline():
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     """, (
         "cinematic_jobelessboy_solarsystem_916",
-        "സൗരയൂഥ രഹസ്യങ്ങൾ (Solar System Mysteries Shorts)",
+        "MysteryVerse MysteryVerse (Solar System Mysteries Shorts)",
         "shorts_916",
         "/static/videos/cinematic_jobelessboy_solarsystem_916.mp4",
         "/static/thumbnails/cinematic_jobelessboy_solarsystem_thumb_169.jpg",
-        "ശനിയുടെ വളയങ്ങൾ ഉണ്ടാക്കിയത് എങ്ങനെ? 🪐✨ #Shorts",
+        "MysteryVerse MysteryVerse MysteryVerse MysteryVerse? 🪐✨ #Shorts",
         "How Were Saturn's Rings Formed? with jobelessboy #Shorts",
-        "ശനിയുടെ മനോഹരമായ വളയങ്ങളുടെ രഹസ്യങ്ങൾ അറിയൂ! #shorts #space #malayalam",
+        "MysteryVerse MysteryVerse MysteryVerse MysteryVerse MysteryVerse! #shorts #space #malayalam",
         duration,
         0
     ))

@@ -165,7 +165,7 @@ class AutonomousScheduler:
         conn.commit()
 
         try:
-            # 1. Voiceover Synthesis (Malayalam Neural TTS)
+            # 1. Voiceover Synthesis (English Neural TTS)
             audio_filename = f"{job_id}_voice.mp3"
             audio_path = str(AUDIO_DIR / audio_filename)
             self.tts_service.generate_speech_sync(script_data["full_script_mal"], audio_path)
@@ -218,7 +218,7 @@ class AutonomousScheduler:
                 is_short=is_short
             )
 
-            # 6. High-CTR Malayalam Thumbnail Generation
+            # 6. High-CTR English Thumbnail Generation
             thumb_filename = f"{job_id}_thumb.jpg"
             thumb_path = str(THUMBNAILS_DIR / thumb_filename)
             self.thumbnail_engine.generate_thumbnail(
@@ -232,9 +232,9 @@ class AutonomousScheduler:
 
             # 7. Quality Gate Audit
             metadata = {
-                "title": f"{script_data['mal_title']} | MYSTERY VERSE MALAYALAM",
-                "description": f"{script_data['full_script_mal']}\n\n#Malayalam #Science #Mysteries #MysteryverseMalayalam #shorts",
-                "tags": ["Malayalam", "Mystery", "Science", "Space", "Facts", "MalayalamShorts"],
+                "title": f"{script_data.get('title') or script_data.get('mal_title')} | MysteryVerse",
+                "description": f"{script_data.get('full_script_en') or script_data.get('full_script_mal')}\n\n#Science #Space #MysteryVerse #Astrophysics #Shorts",
+                "tags": ["Science", "Mystery", "Space", "Astrophysics", "Facts", "MysteryVerse", "Shorts"],
                 "synthetic_disclosure": True
             }
             video_job_data = {

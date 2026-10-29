@@ -1,5 +1,5 @@
 """
-MysteryVerse Malayalam — Cinematic Character Animation Test
+MysteryVerse — Cinematic Character Animation Test
 Renders an authentic, playable MP4 character test video (1920x1080, 30fps):
 - Official 3D host: jobelessboy
 - Cinematic space observatory environment
@@ -7,7 +7,7 @@ Renders an authentic, playable MP4 character test video (1920x1080, 30fps):
 - Natural breathing & posture micro-sway
 - Smooth dialogue-synchronized lip-sync (audio RMS speech envelope)
 - Natural eye blink cycle
-- Authentic Malayalam neural narration: 'നമസ്കാരം കൂട്ടുകാരേ!'
+- Authentic English neural narration: 'MysteryVerse MysteryVerse!'
 - Clean white English subtitles: 'Hello, friends!' (no black boxes)
 - Zero Malayalam text on screen
 """

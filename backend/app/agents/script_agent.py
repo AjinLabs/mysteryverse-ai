@@ -10,18 +10,17 @@ from app.database import get_db_connection, log_event
 
 logger = logging.getLogger("mysteryverse.script_agent")
 
-class MalayalamScriptAgent:
+class EnglishScriptAgent:
     def __init__(self):
         self.api_key = settings.GEMINI_API_KEY or os.getenv("GEMINI_API_KEY", "")
 
     def generate_script(self, topic: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Generates an authentic Malayalam narration script with scene cues for Dr. Kiran.
-        Tries Gemini Free Tier if API key is configured; otherwise uses deterministic
-        neural Malayalam structure generation.
+        Generates an authentic English narration script with scene cues for host jobelessboy.
+        Uses Gemini Free Tier if configured; otherwise uses deterministic neural English structure.
         """
         topic_id = topic["id"]
-        title_mal = topic["mal_title"]
+        title = topic.get("title", "")
         category = topic.get("category", "Science & Space")
         is_short = topic.get("format", "short") == "short"
 
@@ -32,43 +31,42 @@ class MalayalamScriptAgent:
                 if script_data:
                     return self._save_script_to_db(topic_id, script_data, model_name="Gemini-Free")
             except Exception as e:
-                logger.warning("Gemini generation failed (%s), using local neural Malayalam engine", e)
+                logger.warning("Gemini generation failed (%s), using local neural English engine", e)
 
-        # Procedural Neural Malayalam Script Generation
-        script_data = self._generate_local_malayalam_script(topic, is_short)
-        return self._save_script_to_db(topic_id, script_data, model_name="Local-Malayalam-Neural")
+        # Procedural Neural English Script Generation
+        script_data = self._generate_local_english_script(topic, is_short)
+        return self._save_script_to_db(topic_id, script_data, model_name="Local-English-Neural")
 
     def _generate_with_gemini(self, topic: Dict[str, Any], is_short: bool) -> Optional[Dict[str, Any]]:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={self.api_key}"
-        duration_desc = "30-60 seconds (approx 80-120 Malayalam words)" if is_short else "3-5 minutes (approx 500-700 Malayalam words)"
+        duration_desc = "30-50 seconds (approx 80-120 English words)" if is_short else "3-5 minutes (approx 500-750 English words)"
         
         prompt = f"""
-You are the lead Malayalam scriptwriter for the YouTube channel MYSTERY VERSE MALAYALAM (@MYSTERYVERSE-MALAYALAM).
-Write an authentic, highly engaging narration script in natural Malayalam (മലയാളം) for the host jobelessboy (ജോബ്‌ലെസ് ബോയ്).
-Never use English or Manglish. Output valid JSON only.
+You are the lead science and mystery scriptwriter for the YouTube channel MysteryVerse (@MysteryVerse).
+Write an authentic, highly engaging, scientifically accurate narration script in conversational English for the host jobelessboy.
+Keep the pacing energetic, thought-provoking, and curiosity-driven. Output valid JSON only.
 
-Topic: {topic['title']}
-Malayalam Title: {topic['mal_title']}
+Topic: {topic.get('title', '')}
 Core Question: {topic.get('core_question', '')}
 Category: {topic.get('category', 'Science')}
 Target Format: {'YouTube Short' if is_short else 'Long-form Video'} ({duration_desc})
 
 Structure JSON format exactly:
 {{
-  "mal_hook": "Engaging opening hook in Malayalam...",
-  "mal_content": "Core narrative and scientific explanation in Malayalam...",
-  "mal_conclusion": "Thought-provoking conclusion in Malayalam...",
-  "call_to_action": "സബ്സ്ക്രൈബ് ചെയ്യൂ മിസ്റ്ററി വേഴ്സ് മലയാളം...",
+  "hook": "Engaging opening hook in English...",
+  "content": "Core narrative and scientific explanation in English...",
+  "conclusion": "Thought-provoking conclusion in English...",
+  "call_to_action": "Subscribe to MysteryVerse and drop your thoughts below...",
   "scenes": [
     {{
       "scene_number": 1,
       "duration_sec": 6.0,
-      "visual_description": "Exoplanet with glowing rings",
+      "visual_description": "Cosmic planetary visualization",
       "camera_movement": "zoom_in",
       "character_expression": "curiosity",
       "character_pose": "pointing_right",
       "background_theme": "space",
-      "speech_segment_mal": "Malayalam speech segment for this scene..."
+      "speech_segment": "English speech segment for this scene..."
     }}
   ]
 }}
@@ -89,55 +87,55 @@ Structure JSON format exactly:
             return json.loads(raw_text.strip())
         return None
 
-    def _generate_local_malayalam_script(self, topic: Dict[str, Any], is_short: bool) -> Dict[str, Any]:
+    def _generate_local_english_script(self, topic: Dict[str, Any], is_short: bool) -> Dict[str, Any]:
         """
-        Creates authentic, rhythmically paced Malayalam scripts with verified scientific/mystery facts.
+        Creates authentic, rhythmically paced English scripts with verified scientific/mystery facts.
         """
-        title_mal = topic["mal_title"]
+        title = topic.get("title", "")
         category = topic.get("category", "Science & Space")
 
-        if "ഭൂമി വെറും 5 സെക്കൻഡ്" in title_mal or "What If" in topic["title"]:
-            hook = "ഭൂമി പെട്ടെന്ന് വെറും 5 സെക്കൻഡ് കറങ്ങുന്നത് നിർത്തിയാൽ എന്ത് സംഭവിക്കുമെന്ന് നിങ്ങൾ എപ്പോഴെങ്കിലും ചിന്തിച്ചിട്ടുണ്ടോ?"
-            content = "നമ്മുടെ ഭൂമിയുടെ മധ്യരേഖയിൽ മണിക്കൂറിൽ ഏകദേശം 1670 കിലോമീറ്റർ വേഗതയിലാണ് കറക്കം നടക്കുന്നത്. ഭൂമി പെട്ടെന്ന് നിന്നാൽ, അന്തരീക്ഷത്തിലെ വായുവും കടലും വൻ വേഗതയിൽ കിഴക്കോട്ട് കുതിക്കും! സൂപ്പർസോണിക് കൊടുങ്കാറ്റുകളും ഭീമാകാരമായ സുനാമികളും ഭൂമുഖത്തെ തകർത്തെറിയും. 5 സെക്കൻഡിനു ശേഷം ഭൂമി വീണ്ടും കറങ്ങാൻ തുടങ്ങിയാലും, അത് മറ്റൊരു ലോകമായി മാറിയിരിക്കും!"
-            conclusion = "ശാസ്ത്രം തെളിയിക്കുന്നത്, നിശബ്ദമായി കറങ്ങുന്ന ഈ ഗ്രഹം മാത്രമാണ് ജീവന്റെ നിലനിൽപ്പ് സാധ്യമാക്കുന്നത്."
-            cta = "ഇതുപോലുള്ള അത്ഭുത ശാസ്ത്ര രഹസ്യങ്ങൾക്കായി മിസ്റ്ററി വേഴ്സ് മലയാളം ഇപ്പോൾ തന്നെ സബ്സ്ക്രൈബ് ചെയ്യൂ!"
+        if "Sun" in title or "Disappear" in title or "What If" in title:
+            hook = "Imagine waking up tomorrow morning, looking outside, and the sky is pitch black. The Sun has vanished!"
+            content = "Because light takes eight minutes and twenty seconds to reach us, Earth would still enjoy sunlight for a brief moment before plunged into eternal night. Without the Sun's gravity traveling at the speed of light, our planet would instantly fling out into deep interstellar space as a frozen wanderer!"
+            conclusion = "Deep underground near geothermal vents, humanity might just hold on to survival."
+            cta = "Subscribe to MysteryVerse right now for more mind-bending space science!"
             scenes = [
                 {
                     "scene_number": 1,
                     "duration_sec": 5.0,
-                    "visual_description": "Spinning 3D Earth in cosmic space with glowing atmosphere",
+                    "visual_description": "Dark sky observatory with sudden disappearing solar light",
                     "camera_movement": "zoom_in",
-                    "character_expression": "curiosity",
+                    "character_expression": "surprise",
                     "character_pose": "pointing_right",
                     "background_theme": "space",
-                    "speech_segment_mal": hook
+                    "speech_segment": hook
                 },
                 {
                     "scene_number": 2,
                     "duration_sec": 12.0,
-                    "visual_description": "Equatorial rotation physics diagram and supersonic storm visualization",
+                    "visual_description": "Planetary orbit physics diagram and rogue planet path",
                     "camera_movement": "slow_orbit",
-                    "character_expression": "surprise",
+                    "character_expression": "curiosity",
                     "character_pose": "holding_tablet",
                     "background_theme": "science",
-                    "speech_segment_mal": content
+                    "speech_segment": content
                 },
                 {
                     "scene_number": 3,
                     "duration_sec": 5.0,
-                    "visual_description": "Peaceful Earth rotation resumes with host jobelessboy outro",
+                    "visual_description": "Host jobelessboy waving outro with subscribe badge",
                     "camera_movement": "pan_right",
                     "character_expression": "explanation",
                     "character_pose": "greeting",
                     "background_theme": "space",
-                    "speech_segment_mal": f"{conclusion} {cta}"
+                    "speech_segment": f"{conclusion} {cta}"
                 }
             ]
-        elif "ജെയിംസ് വെബ്ബ്" in title_mal or "James Webb" in topic["title"]:
-            hook = "പ്രപഞ്ചത്തിന്റെ തുടക്കത്തിൽ ഒരിക്കലും ഉണ്ടാകാൻ പാടില്ലാത്ത ചിലത് ജെയിംസ് വെബ്ബ് ടെലിസ്കോപ്പ് കണ്ടെത്തിയിരിക്കുന്നു!"
-            content = "മഹാവിസ്ഫോടനത്തിന് വെറും 50 കോടി വർഷങ്ങൾക്ക് ശേഷം രൂപപ്പെട്ട അസാധാരണ ഭീമൻ ഗാലക്സികളാണ് ശാസ്ത്രജ്ഞരെ അമ്പരപ്പിക്കുന്നത്. നിലവിലെ പ്രപഞ്ച മാതൃകകൾ പ്രകാരം ഇത്രയും വേഗത്തിൽ ഗാലക്സികൾ വളരാൻ കഴിയില്ല. അങ്ങനെയെങ്കിൽ പ്രപഞ്ചോൽപ്പത്തിയെക്കുറിച്ചുള്ള നമ്മുടെ ധാരണകൾ തന്നെ മാറ്റിയെഴുതേണ്ടി വരുമോ?"
-            conclusion = "പ്രപഞ്ചത്തിന്റെ അതിരുകളിൽ ഇനിയും കണ്ടെത്താത്ത എണ്ണമറ്റ രഹസ്യങ്ങൾ നമ്മെ കാത്തിരിക്കുന്നു."
-            cta = "കൂടുതൽ ശാസ്ത്ര കൗതുകങ്ങൾ അറിയാൻ മിസ്റ്ററി വേഴ്സ് മലയാളം ഫോളോ ചെയ്യൂ!"
+        elif "James Webb" in title or "Telescope" in title:
+            hook = "The James Webb Space Telescope just spotted something in the early universe that shouldn't exist!"
+            content = "Massive galaxies that formed just 500 million years after the Big Bang are baffling cosmologists. According to current models, galaxies simply couldn't have grown this large so fast. Could this rewrite our fundamental understanding of physics?"
+            conclusion = "At the outer frontiers of time and space, countless mysteries await."
+            cta = "Follow MysteryVerse to stay on the cutting edge of cosmic discoveries!"
             scenes = [
                 {
                     "scene_number": 1,
@@ -147,7 +145,7 @@ Structure JSON format exactly:
                     "character_expression": "surprise",
                     "character_pose": "pointing_right",
                     "background_theme": "space",
-                    "speech_segment_mal": hook
+                    "speech_segment": hook
                 },
                 {
                     "scene_number": 2,
@@ -157,7 +155,7 @@ Structure JSON format exactly:
                     "character_expression": "curiosity",
                     "character_pose": "holding_tablet",
                     "background_theme": "science",
-                    "speech_segment_mal": content
+                    "speech_segment": content
                 },
                 {
                     "scene_number": 3,
@@ -167,14 +165,14 @@ Structure JSON format exactly:
                     "character_expression": "explanation",
                     "character_pose": "greeting",
                     "background_theme": "space",
-                    "speech_segment_mal": f"{conclusion} {cta}"
+                    "speech_segment": f"{conclusion} {cta}"
                 }
             ]
         else:
-            hook = f"നിങ്ങൾക്ക് അറിയാമോ? {title_mal} എന്ന വിഷയത്തിന് പിന്നിലെ യഥാർത്ഥ സത്യം എന്താണെന്ന്!"
-            content = "ശാസ്ത്രലോകവും ചരിത്രവും ഇന്നും വിസ്മയത്തോടെ നോക്കിക്കാണുന്ന ഒരു പ്രതിഭാസമാണിത്. അന്ധവിശ്വാസങ്ങൾക്ക് അപ്പുറം, തെളിവുകൾ പരിശോധിക്കുമ്പോൾ അത്ഭുതകരമായ കണ്ടെത്തലുകളാണ് പുറത്തുവരുന്നത്. ശാസ്ത്രീയ വിശകലനങ്ങൾ നൽകുന്ന ഉത്തരങ്ങൾ നമ്മെ അമ്പരപ്പിക്കും."
-            conclusion = "രഹസ്യങ്ങളുടെ പുകമറകൾ നീക്കി സത്യം കണ്ടെത്താനുള്ള യാത്ര തുടരുകയാണ്."
-            cta = "ഇതുപോലുള്ള രഹസ്യങ്ങൾ അറിയാൻ മിസ്റ്ററി വേഴ്സ് മലയാളം ഇപ്പോൾ സബ്സ്ക്രൈബ് ചെയ്യൂ!"
+            hook = f"Did you know the incredible scientific truth behind {title}?"
+            content = "Beyond myths and assumptions, modern empirical evidence reveals a reality far more astonishing than fiction. When we examine the raw data, the universe continues to amaze us."
+            conclusion = "The journey to uncover the truth never stops."
+            cta = "Subscribe to MysteryVerse now and explore the unknown with us!"
             scenes = [
                 {
                     "scene_number": 1,
@@ -184,7 +182,7 @@ Structure JSON format exactly:
                     "character_expression": "curiosity",
                     "character_pose": "pointing_right",
                     "background_theme": "abstract",
-                    "speech_segment_mal": hook
+                    "speech_segment": hook
                 },
                 {
                     "scene_number": 2,
@@ -194,7 +192,7 @@ Structure JSON format exactly:
                     "character_expression": "explanation",
                     "character_pose": "holding_tablet",
                     "background_theme": "science",
-                    "speech_segment_mal": content
+                    "speech_segment": content
                 },
                 {
                     "scene_number": 3,
@@ -204,14 +202,14 @@ Structure JSON format exactly:
                     "character_expression": "excitement",
                     "character_pose": "greeting",
                     "background_theme": "space",
-                    "speech_segment_mal": f"{conclusion} {cta}"
+                    "speech_segment": f"{conclusion} {cta}"
                 }
             ]
 
         return {
-            "mal_hook": hook,
-            "mal_content": content,
-            "mal_conclusion": conclusion,
+            "hook": hook,
+            "content": content,
+            "conclusion": conclusion,
             "call_to_action": cta,
             "scenes": scenes
         }
@@ -223,11 +221,16 @@ Structure JSON format exactly:
         script_id = f"scr_{uuid.uuid4().hex[:10]}"
         now = datetime.now(timezone.utc).isoformat()
         
-        full_text = f"{script_data['mal_hook']} {script_data['mal_content']} {script_data['mal_conclusion']} {script_data.get('call_to_action', '')}"
+        hook = script_data.get("hook") or script_data.get("mal_hook", "")
+        content = script_data.get("content") or script_data.get("mal_content", "")
+        conclusion = script_data.get("conclusion") or script_data.get("mal_conclusion", "")
+        cta = script_data.get("call_to_action", "")
+
+        full_text = f"{hook} {content} {conclusion} {cta}".strip()
         words = full_text.split()
         word_count = len(words)
-        # Average speaking rate: ~2.5 words per second in Malayalam
-        estimated_duration = round(word_count / 2.5, 1)
+        # Average speaking rate: ~2.8 words per second in English
+        estimated_duration = round(word_count / 2.8, 1)
 
         cursor.execute("""
         INSERT INTO scripts (
@@ -239,11 +242,11 @@ Structure JSON format exactly:
             script_id,
             topic_id,
             "short" if estimated_duration < 90 else "long",
-            script_data["mal_hook"],
-            script_data["mal_content"],
-            script_data["mal_conclusion"],
+            hook,
+            content,
+            conclusion,
             full_text,
-            "Script authored in natural Malayalam with strict factual alignment.",
+            full_text,
             json.dumps(script_data.get("scenes", [])),
             estimated_duration,
             word_count,
@@ -252,7 +255,6 @@ Structure JSON format exactly:
             now
         ))
 
-        # Update topic status to 'scripted'
         cursor.execute("UPDATE topics SET status = 'scripted' WHERE id = ?", (topic_id,))
         conn.commit()
         conn.close()
@@ -261,9 +263,13 @@ Structure JSON format exactly:
         return {
             "id": script_id,
             "topic_id": topic_id,
+            "full_script_en": full_text,
             "full_script_mal": full_text,
             "word_count": word_count,
             "estimated_duration_sec": estimated_duration,
             "scenes": script_data.get("scenes", []),
             "model_used": model_name
         }
+
+# Backward compatibility alias
+MalayalamScriptAgent = EnglishScriptAgent

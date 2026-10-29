@@ -1,14 +1,14 @@
 """
 MYSTERYVERSE AI - OFFICIAL CHARACTER BIBLE
-Recurring Animated Host: jobelessboy (ജോബ്‌ലെസ് ബോയ്)
+Recurring Animated Host: jobelessboy
 """
 
 CHARACTER_BIBLE = {
     "identity": {
-        "name_malayalam": "ജോബ്‌ലെസ് ബോയ് (jobelessboy)",
-        "name_english": "jobelessboy (Jobless Boy)",
+        "name_english": "jobelessboy (The Young Explorer)",
+        "name_secondary": "jobelessboy",
         "title": "Cosmic Mystery Investigator & Truth Seeker",
-        "archetype": "Relatable, witty, hyper-curious youth explorer who turned having no 9-to-5 job into full-time obsession with uncovering deep science, historical enigmas, and cosmic truths!",
+        "archetype": "Relatable, witty, hyper-curious youth explorer obsessed with uncovering deep science, historical enigmas, and cosmic truths!",
         "channel": "MysteryVerse (@MysteryVerse)",
         "tagline": "Unlocking the Universe's Greatest Scientific Mysteries, one revelation at a time!"
     },
@@ -37,11 +37,11 @@ CHARACTER_BIBLE = {
         "tone": "Relatable, witty, highly energetic, inquisitive, analytical, respectful of ancient lore yet scientifically grounded",
         "language": "Conversational, articulate, globally engaging English",
         "key_phrases": [
-            "ഹലോ ഫ്രണ്ട്സ്, നിങ്ങളുടെ സ്വന്തം ജോബ്‌ലെസ് ബോയ് ആണ്! (Hello friends, it's your own Jobless Boy!)",
-            "നിങ്ങൾ എപ്പോഴെങ്കിലും ചിന്തിച്ചിട്ടുണ്ടോ... (Have you ever wondered...)",
-            "സത്യം ശാസ്ത്രം പറയുന്നത് ഇതാണ്... (Here is what science actually reveals...)",
-            "പക്ഷേ, ഇവിടെയാണ് ആ വലിയ നിഗൂഢത ഒളിഞ്ഞിരിക്കുന്നത്! (But this is where the grand mystery lies!)",
-            "ഇതിനെക്കുറിച്ച് നിങ്ങളുടെ അഭിപ്രായം എന്താണ്? കമന്റിൽ പറയൂ! (What is your thought on this? Share in the comments!)"
+            "Hey friends, it's jobelessboy here on MysteryVerse!",
+            "Have you ever wondered what lies beyond the edges of the universe?",
+            "Here is what science actually reveals...",
+            "And this is where the real mystery begins!",
+            "What are your thoughts on this? Drop them in the comments below!"
         ],
         "presentation_rules": [
             "Never present unverified superstition as established fact.",
@@ -58,45 +58,26 @@ CHARACTER_BIBLE = {
             "head_tilt": "5 degrees tilt to the left",
             "blender_shape_keys": {"Brow_R_Up": 0.8, "Eye_Wide": 0.4, "Mouth_Pucker": 0.2}
         },
-        "surprise": {
-            "eyebrows": "Both raised high",
-            "eyes": "Wide open",
-            "mouth": "O-shaped gasp of discovery",
-            "head_tilt": "Slight backward recoil",
-            "blender_shape_keys": {"Brow_L_Up": 1.0, "Brow_R_Up": 1.0, "Eye_Wide": 0.9, "Mouth_Open": 0.7}
-        },
-        "explanation": {
-            "eyebrows": "Neutral, relaxed confident",
-            "eyes": "Direct gaze towards viewer",
-            "mouth": "Gentle articulate smile",
-            "head_tilt": "Direct center",
-            "blender_shape_keys": {"Smile": 0.5, "Direct_Look": 1.0}
-        },
         "excitement": {
-            "eyebrows": "Arched upward with joy",
-            "eyes": "Sparkling, narrowed in a wide smile",
-            "mouth": "Broad enthusiastic grin",
-            "head_tilt": "Leaning forward into camera",
-            "blender_shape_keys": {"Smile": 1.0, "Cheek_Puff": 0.4, "Eye_Squint": 0.3}
+            "eyebrows": "Both raised high",
+            "eyes": "Sparkling wide with dilated pupils",
+            "mouth": "Enthusiastic open grin",
+            "head_tilt": "Forward enthusiastic nod",
+            "blender_shape_keys": {"Brows_Up": 1.0, "Smile_Open": 0.9, "Cheek_Puff": 0.3}
         },
         "caution": {
-            "eyebrows": "Furrowed slightly downward",
-            "eyes": "Intense, serious gaze",
-            "mouth": "Firm straight line",
-            "head_tilt": "Chin slightly lowered",
-            "blender_shape_keys": {"Brow_Down": 0.7, "Serious": 0.8}
+            "eyebrows": "Furrowed slightly together",
+            "eyes": "Narrowed in cautious scrutiny",
+            "mouth": "Drawn tight in thoughtful hesitation",
+            "head_tilt": "Slightly back",
+            "blender_shape_keys": {"Brow_Down_L": 0.6, "Brow_Down_R": 0.6, "Mouth_Tight": 0.7}
         },
         "humour": {
-            "eyebrows": "One eyebrow playfully raised",
-            "eyes": "Warm crinkle at corners",
-            "mouth": "Asymmetrical wry smirk",
-            "head_tilt": "Slight sideward nod",
-            "blender_shape_keys": {"Smile_L": 0.8, "Brow_R_Up": 0.6}
+            "eyebrows": "Relaxed asymmetrical smirk",
+            "eyes": "One eye playfully squinted (winking gesture)",
+            "mouth": "Asymmetrical wry half-smile",
+            "head_tilt": "Casual side tilt",
+            "blender_shape_keys": {"Smile_L": 0.8, "Eye_Blink_R": 0.9, "Brow_L_Up": 0.4}
         }
-    },
-    "gestures_and_staging": {
-        "shorts_framing": "Host positioned at bottom-right or lower third, pointing upward/left toward dynamic visuals and animated subtitles",
-        "long_form_framing": "Wide establishing host intro (5s), cutting to full-screen 3D simulation with Picture-in-Picture host commentary circle, concluding with host outro",
-        "lighting": "3-point studio lighting: Warm Key (45 deg right), Cyan Rim Light (back-left), Soft Ambient Fill"
     }
 }

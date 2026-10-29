@@ -1,5 +1,5 @@
 """
-MysteryVerse Malayalam — Introduction Videos Production Runner
+MysteryVerse — Introduction Videos Production Runner
 Renders both:
 - output/mysteryverse_intro_short.mp4 (9:16 Shorts, 1080x1920)
 - output/mysteryverse_intro_long.mp4 (16:9 Long-Form, 1920x1080)
@@ -143,12 +143,12 @@ def main():
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     """, (
         "top_official_intro",
-        "MysteryVerse Malayalam — Official 3D Channel Introduction",
-        "മിസ്റ്ററിവേഴ്സ് മലയാളം — ഔദ്യോഗിക ആമുഖം",
+        "MysteryVerse — Official 3D Channel Introduction",
+        "MysteryVerse MysteryVerse — MysteryVerse MysteryVerse",
         "Channel Intro",
         "hybrid",
         100.0,
-        '["https://youtube.com/@MYSTERYVERSE-MALAYALAM"]',
+        '["https://youtube.com/@MysteryVerse"]',
         "produced"
     ))
 
@@ -160,10 +160,10 @@ def main():
         "scr_official_intro",
         "top_official_intro",
         "hybrid",
-        "ഹായ് കൂട്ടുകാരേ! പുതിയ അറിവുകൾ കണ്ടെത്താൻ ഇഷ്ടമാണോ?",
-        "ശാസ്ത്രം, പ്രപഞ്ചം, ജനറൽ നോളജ്, ചരിത്രം, വിവാദ ചോദ്യങ്ങൾ, മനുഷ്യ മനസ്സ്...",
-        "MysteryVerse Malayalam Subscribe ചെയ്യൂ, Comment ചെയ്യൂ!",
-        "നമസ്കാരം കൂട്ടുകാരേ! MysteryVerse Malayalam-ലേക്ക് എല്ലാവർക്കും സ്വാഗതം!...",
+        "MysteryVerse MysteryVerse! MysteryVerse MysteryVerse MysteryVerse MysteryVerse?",
+        "MysteryVerse, MysteryVerse, MysteryVerse MysteryVerse, MysteryVerse, MysteryVerse MysteryVerse, MysteryVerse MysteryVerse...",
+        "MysteryVerse Subscribe MysteryVerse, Comment MysteryVerse!",
+        "MysteryVerse MysteryVerse! MysteryVerse-MysteryVerse MysteryVerse MysteryVerse!...",
         "Childlike Malayalam Voiceover, English Subtitles only, jobelessboy recurring host.",
         '[{"scene": "Observatory"}, {"scene": "Earth & Space"}, {"scene": "Molecules & Lab"}, {"scene": "History Pyramids"}, {"scene": "Controversy & Enigma"}, {"scene": "Psychology & Ocean"}, {"scene": "Community"}, {"scene": "Logo Outro"}]',
         dur_long,
@@ -189,7 +189,7 @@ def main():
         "production_director_3d",
         "ready_for_upload",
         1,
-        '{"host": "jobelessboy", "language_policy": "spoken_malayalam_english_text_only", "format": "9:16 Shorts", "fps": 24}'
+        '{"host": "jobelessboy", "language_policy": "spoken_english_english_text", "format": "9:16 Shorts", "fps": 24}'
     ))
 
     c.execute("""
@@ -208,7 +208,7 @@ def main():
         "production_director_3d",
         "ready_for_upload",
         1,
-        '{"host": "jobelessboy", "language_policy": "spoken_malayalam_english_text_only", "format": "16:9 Full HD", "fps": 24}'
+        '{"host": "jobelessboy", "language_policy": "spoken_english_english_text", "format": "16:9 Full HD", "fps": 24}'
     ))
 
     conn.commit()
