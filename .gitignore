@@ -54,3 +54,10 @@ yarn-debug.log*
 Thumbs.db
 
 .vercel
+
+# Temporary test inspection dumps
+backend/static/downloads_inspect/
+backend/static/inspections/
+backend/static/eye_*
+backend/static/test_*
+.vscode/

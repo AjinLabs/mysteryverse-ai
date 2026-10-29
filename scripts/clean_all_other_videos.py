@@ -4,8 +4,8 @@ import sqlite3
 
 KEEP_VIDEOS = {'mysteryverse_intro_short.mp4', 'mysteryverse_intro_long.mp4'}
 KEEP_THUMBS = {'mysteryverse_intro_short_thumb.jpg', 'mysteryverse_intro_long_thumb.jpg'}
-KEEP_SUBS = {'intro_short_en.srt', 'intro_long_en.srt'}
-KEEP_AUDIO = {'intro_short_kid.mp3', 'intro_long_kid.mp3'}
+KEEP_SUBS = {'intro_short_en.srt', 'intro_long_en.srt', 'intro_short_en_clean.srt', 'intro_long_en_clean.srt'}
+KEEP_AUDIO = {'intro_short_kid.mp3', 'intro_long_kid.mp3', 'raw_short_voice.mp3', 'raw_long_voice.mp3'}
 
 # 1. Clean output/
 for f in os.listdir('c:/m/output'):

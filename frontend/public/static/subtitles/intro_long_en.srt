@@ -1,115 +1,172 @@
 1
-00:00:00,500 --> 00:00:05,200
-Hello friends! Welcome everyone to MysteryVerse Malayalam!
+00:00:00,050 --> 00:00:01,116
+Hello, friends!
 
 2
-00:00:05,200 --> 00:00:11,500
-This world is filled with things that amaze us every single day.
+00:00:01,116 --> 00:00:03,786
+Have you ever looked up at the night sky and wondered?
 
 3
-00:00:11,500 --> 00:00:16,800
-Some can be explained through science. Some can be understood through history.
+00:00:03,786 --> 00:00:07,888
+In this vast universe, how many things must there be that we don't know?
 
 4
-00:00:16,800 --> 00:00:22,200
-Others inspire us to ask completely new and deeper questions.
+00:00:07,888 --> 00:00:12,220
+Could events from thousands of years ago still hold secrets nobody has found?
 
 5
-00:00:22,200 --> 00:00:28,500
-Bringing such fascinating knowledge to you in an exciting way is the mission of this channel.
+00:00:12,220 --> 00:00:14,308
+And how does our own mind actually work?
 
 6
-00:00:28,500 --> 00:00:32,800
-First, let's journey into the vast realm of science.
+00:00:14,308 --> 00:00:17,803
+If questions like these make you think too, you've come to the right place.
 
 7
-00:00:32,800 --> 00:00:37,500
-How does our Earth actually work? How immense is the universe?
+00:00:17,803 --> 00:00:19,696
+Welcome to MysteryVerse!
 
 8
-00:00:37,500 --> 00:00:42,200
-What are black holes? How does the intricate human body function?
+00:00:19,696 --> 00:00:24,878
+This is a journey into the world of knowledge, science, history and mysteries.
 
 9
-00:00:42,200 --> 00:00:48,800
-We will present these big questions in easy-to-understand cinematic animations.
+00:00:24,878 --> 00:00:27,597
+First, let's step into the world of science.
 
 10
-00:00:48,800 --> 00:00:54,200
-Next, general knowledge and astonishing real-world facts.
+00:00:27,597 --> 00:00:29,466
+How does the world around us work?
 
 11
-00:00:54,200 --> 00:01:00,800
-Different nations of our world, natural wonders, technological breakthroughs...
+00:00:29,466 --> 00:00:31,723
+How do new inventions change our lives?
 
 12
-00:01:00,800 --> 00:01:06,800
-and the intriguing science behind the everyday phenomena we see.
+00:00:31,723 --> 00:00:34,648
+What science is at work behind the wonders of nature?
 
 13
-00:01:06,800 --> 00:01:11,500
-History is also an essential pillar of our exploration.
+00:00:34,648 --> 00:00:40,315
+With simple explanations and fascinating visuals, let's try to understand science more closely.
 
 14
-00:01:11,500 --> 00:01:17,200
-Ancient civilisations, pivotal moments in time, ancient inventions...
+00:00:40,315 --> 00:00:43,531
+Next, let's travel beyond the edges of the Earth.
 
 15
-00:01:17,200 --> 00:01:23,500
-and historical enigmas that continue to captivate minds today.
+00:00:43,531 --> 00:00:50,412
+Planets, stars, galaxies, black holes, and the scientific discoveries about the origin of the universe.
 
 16
-00:01:23,500 --> 00:01:29,200
-We will also examine controversial questions and subjects with diverse viewpoints.
+00:00:50,412 --> 00:00:56,347
+Here we'll look at what scientists have found about the universe we live in, and the questions that still have no answers.
 
 17
-00:01:29,200 --> 00:01:36,500
-Separating verified facts from opinions, and clarifying what remains unresolved.
+00:00:56,347 --> 00:01:01,189
+There are many events, in history and in today's world, that amaze us.
 
 18
-00:01:36,500 --> 00:01:42,800
-The human mind, memory, psychology, nature, wildlife, deep oceans...
+00:01:01,189 --> 00:01:03,385
+How did ancient civilizations grow?
 
 19
-00:01:42,800 --> 00:01:49,200
-cutting-edge technology and future inventions will all be part of our voyage.
+00:01:03,385 --> 00:01:06,031
+Why are some events in history still debated today?
 
 20
-00:01:49,200 --> 00:01:54,800
-Yet, this channel is far more than just a place to state dry facts.
+00:01:06,031 --> 00:01:08,701
+What could be behind events that seem mysterious?
 
 21
-00:01:54,800 --> 00:02:00,500
-Every video should give you a new question, inspiring you to learn something new...
+00:01:08,701 --> 00:01:11,432
+Let's examine such topics based on evidence.
 
 22
-00:02:00,500 --> 00:02:06,800
-and helping you look at the universe with deeper curiosity.
+00:01:11,432 --> 00:01:16,007
+We'll also take care to tell confirmed facts, theories and plain guesses apart.
 
 23
-00:02:06,800 --> 00:02:13,200
-That is why our videos prioritise animation, visuals, storytelling, and clear explanations.
+00:01:16,007 --> 00:01:17,087
+How do we think?
 
 24
-00:02:13,200 --> 00:02:18,500
-If there are specific topics you love, share them in the comments below!
+00:01:17,087 --> 00:01:19,211
+Why are we afraid of certain things?
 
 25
-00:02:18,500 --> 00:02:24,200
-Your support is vital on this expedition of discovery.
+00:01:19,211 --> 00:01:20,691
+How are memories formed?
 
 26
-00:02:24,200 --> 00:02:30,200
-Subscribe to MysteryVerse Malayalam, like and share our videos!
+00:01:20,691 --> 00:01:22,973
+What factors influence our decisions?
 
 27
-00:02:30,200 --> 00:02:35,500
-Let's learn together, ask big questions, and uncover new truths.
+00:01:22,973 --> 00:01:29,053
+Let's explore what psychology has learned about the human mind and behaviour, and some interesting discoveries.
 
 28
-00:02:35,500 --> 00:02:40,500
-Until the next video, stay curious and keep exploring!
+00:01:29,053 --> 00:01:38,519
+Besides this, the channel will also bring amazing facts about the world, general knowledge, technology, new discoveries, and things we usually don't notice.
 
 29
-00:02:40,500 --> 00:02:44,500
-MysteryVerse Malayalam — Welcome to the World of Discovery!
+00:01:38,519 --> 00:01:40,121
+Some topics will amaze you.
+
+30
+00:01:40,121 --> 00:01:41,941
+Some will make you want to dig deeper.
+
+31
+00:01:41,941 --> 00:01:45,048
+Others will help you take a fresh look at what you thought you knew.
+
+32
+00:01:45,048 --> 00:01:48,834
+Friends, the aim of MysteryVerse is not just to tell you facts.
+
+33
+00:01:48,834 --> 00:01:54,259
+It is also to encourage you to learn new things, ask questions, and think based on evidence.
+
+34
+00:01:54,259 --> 00:02:01,043
+Here we will investigate what we don't know, get to know new discoveries, and approach every subject with curiosity.
+
+35
+00:02:01,043 --> 00:02:02,609
+Will you join us on this journey?
+
+36
+00:02:02,609 --> 00:02:04,114
+Subscribe to the channel.
+
+37
+00:02:04,114 --> 00:02:06,262
+If you like the video, give it a like.
+
+38
+00:02:06,262 --> 00:02:09,332
+Suggest the topics you want to learn about in the comments.
+
+39
+00:02:09,332 --> 00:02:11,941
+So let's begin a new journey of discovery.
+
+40
+00:02:11,941 --> 00:02:13,458
+This is MysteryVerse.
+
+41
+00:02:13,458 --> 00:02:14,550
+Ask questions.
+
+42
+00:02:14,550 --> 00:02:15,655
+Seek knowledge.
+
+43
+00:02:15,655 --> 00:02:16,929
+See the world anew!
+
