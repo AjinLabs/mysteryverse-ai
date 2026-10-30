@@ -111,8 +111,8 @@ def generate_short_thumbnail():
     
     draw = ImageDraw.Draw(bg)
     
-    draw.rounded_rectangle([70, 140, 500, 210], radius=12, fill=(20, 20, 40, 230), outline=(0, 200, 255, 255), width=3)
-    draw.text((95, 153), "MYSTERYVERSE SHORTS", font=font_badge_short, fill=(0, 230, 255))
+    draw.rounded_rectangle([70, 140, 440, 210], radius=12, fill=(20, 20, 40, 230), outline=(0, 200, 255, 255), width=3)
+    draw.text((95, 153), "● MYSTERYVERSE", font=font_badge_short, fill=(0, 230, 255))
     
     draw_text_with_effects(draw, "THE SUN", (70, 260), font_main_short, fill_color=(255, 255, 255), stroke_color=(0, 0, 0), stroke_w=8)
     draw_text_with_effects(draw, "DISAPPEARED!", (70, 370), font_main_short, fill_color=(255, 50, 50), stroke_color=(0, 0, 0), stroke_w=9, glow_color=(255, 20, 20, 120))

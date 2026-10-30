@@ -1,60 +1,51 @@
 1
-00:00:00,050 --> 00:00:05,330
-Imagine waking up one morning, looking outside your window, and the sky is pitch black.
+00:00:00,400 --> 00:00:03,800
+Imagine waking up one morning and looking outside your window.
 
 2
-00:00:05,330 --> 00:00:07,463
-The Sun has completely disappeared!
+00:00:03,800 --> 00:00:07,100
+The sky is completely dark, and the Sun has vanished!
 
 3
-00:00:07,463 --> 00:00:08,786
-What would happen to Earth?
+00:00:07,100 --> 00:00:09,900
+What would actually happen to our planet?
 
 4
-00:00:08,786 --> 00:00:10,306
-Would we freeze instantly?
+00:00:09,900 --> 00:00:14,200
+Surprisingly, we wouldn't notice anything for eight minutes and twenty seconds.
 
 5
-00:00:10,306 --> 00:00:11,617
-Surprisingly, no.
+00:00:14,200 --> 00:00:18,500
+Because sunlight takes that long to travel ninety-three million miles to reach Earth.
 
 6
-00:00:11,617 --> 00:00:15,281
-For the first eight minutes and twenty seconds, we wouldn't even notice.
-
-7
-00:00:15,281 --> 00:00:20,012
-Sunlight takes that long to travel ninety-three million miles to reach Earth.
-
-8
-00:00:20,012 --> 00:00:23,578
+00:00:18,500 --> 00:00:22,200
 For eight minutes, the world would carry on completely normally.
 
+7
+00:00:22,200 --> 00:00:25,100
+Then, the light stops arriving.
+
+8
+00:00:25,100 --> 00:00:28,300
+Would Earth freeze instantly? No.
+
 9
-00:00:23,578 --> 00:00:25,330
-Then, utter darkness.
+00:00:28,300 --> 00:00:34,200
+Without sunlight, Earth's surface would gradually cool, though the rate would vary across the planet.
 
 10
-00:00:25,330 --> 00:00:27,892
-Within days, global temperatures plummet.
+00:00:34,200 --> 00:00:41,200
+Even stranger, the change in gravitational influence would reach Earth at approximately the same time as the last sunlight...
 
 11
-00:00:27,892 --> 00:00:31,789
-Within weeks, the oceans begin to freeze from the surface down.
+00:00:41,200 --> 00:00:46,200
+sending our planet coasting in a straight line into deep interstellar space.
 
 12
-00:00:31,789 --> 00:00:34,142
-Could humanity survive without our star?
+00:00:46,200 --> 00:00:50,500
+Humanity could only survive by sheltering deep underground, powered by Earth's geothermal heat.
 
 13
-00:00:34,142 --> 00:00:39,019
-Only by moving deep underground, powered by geothermal and nuclear energy.
-
-14
-00:00:39,019 --> 00:00:43,112
-Subscribe to MysteryVerse for more mind-blowing science mysteries!
-
-15
-00:00:43,112 --> 00:00:44,264
-Stay curious!
-
+00:00:50,500 --> 00:00:53,800
+Subscribe to MysteryVerse, and stay curious!
